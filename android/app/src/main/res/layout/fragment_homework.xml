@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.mountcarmelschools.ui.homework.HomeworkViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:context=".ui.homework.HomeworkFragment">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/controls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/select_subject_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:fontFamily="@font/georgia"
+                    android:text="Select Subject"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/select_subject_input_wrapper"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    app:layout_constraintEnd_toStartOf="@id/select_date_input_wrapper"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/select_subject_label">
+
+                    <Spinner
+                        android:id="@+id/select_subject_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_48sdp"
+                        android:clickable="true"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:maxLines="1"
+                        android:padding="@dimen/_5sdp" />
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/select_date_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:fontFamily="@font/georgia"
+                    android:text="Select Month"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="@id/select_date_input_wrapper"
+                    app:layout_constraintTop_toTopOf="@id/select_subject_label" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/select_date_input_wrapper"
+                    android:layout_width="0dp"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/select_subject_input_wrapper"
+                    app:layout_constraintTop_toBottomOf="@id/select_date_label">
+                    <Spinner
+                        android:id="@+id/select_date_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_48sdp"
+                        android:clickable="true"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:maxLines="1"
+                        android:padding="@dimen/_5sdp" />
+                </androidx.cardview.widget.CardView>
+
+                <View
+                    android:layout_height="5dp"
+                    android:layout_width="5dp"
+                    app:layout_constraintStart_toStartOf="@+id/select_subject_input_wrapper"
+                    app:layout_constraintTop_toBottomOf="@id/select_subject_input_wrapper" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/staffBackground"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/search_input_card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <EditText
+                        android:id="@+id/search_input_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:background="@color/white"
+                        android:drawableEnd="@drawable/ic_search"
+                        android:drawableTint="@color/purple"
+                        android:fontFamily="@font/georgia"
+                        android:hint="Find homework"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:padding="@dimen/_10sdp"
+                        android:inputType="text"
+                        android:textSize="@dimen/_12ssp" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/homeworks_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_4sdp"
+                    android:paddingHorizontal="@dimen/_16sdp"
+                    android:paddingBottom="@dimen/_48sdp"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/search_input_card" />
+
+                <TextView
+                    android:id="@+id/empty_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:text="No Record Found"
+                    android:textSize="@dimen/_16ssp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/homeworks_list"
+                    app:layout_constraintStart_toStartOf="@+id/homeworks_list"
+                    app:layout_constraintTop_toBottomOf="@+id/search_input_card" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>

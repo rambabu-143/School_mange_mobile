@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.mountcarmelschools.ui.disciplinary.forstaff.DisciplinaryForStaffViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:id="@+id/cl_staff_wise"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rl_class"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:paddingStart="@dimen/_1sdp"
+            android:paddingTop="1dp"
+            android:paddingEnd="@dimen/_1sdp"
+            android:paddingBottom="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_class"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="0dp"
+                android:background="@drawable/blue_border"
+                android:fontFamily="@font/georgia"
+                android:gravity="center"
+                android:text="Class"
+                android:textAllCaps="false"
+                android:textColor="@color/purple"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_student"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:background="@drawable/gray_backgroud"
+                android:fontFamily="@font/georgia"
+                android:gravity="center"
+                android:text="@string/student"
+                android:textAllCaps="false"
+                android:textColor="@color/border"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_class"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/studentView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/studentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/qrImage"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/qr_code"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/studentContainer" />
+
+            <LinearLayout
+                android:id="@+id/qrCodeScan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#f0f0f0"
+                android:orientation="vertical"
+                android:padding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/qrImage"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/georgia"
+                    android:gravity="center"
+                    android:text="Student"
+                    android:textSize="@dimen/_12ssp"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/georgia"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingEnd="@dimen/_20sdp"
+                    android:text="Scan QR Code"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp"
+
+                    />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/staffBackground"
+                android:fontFamily="@font/georgia"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/save"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/classView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_50sdp">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_select_classlabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/georgia"
+                android:text="Select Class"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_class"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                app:layout_constraintEnd_toStartOf="@id/cv_search"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_select_classlabel">
+
+                <Spinner
+                    android:id="@+id/sectionList"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:maxLines="1"
+                    android:padding="@dimen/_5sdp" />
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_select_dateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:fontFamily="@font/georgia"
+                android:text="Select Date"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="@id/cv_search"
+                app:layout_constraintTop_toTopOf="@id/tv_select_classlabel" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cv_class"
+                app:layout_constraintTop_toBottomOf="@id/tv_select_dateLabel">
+
+                <TextView
+                    android:id="@+id/edt_calendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableEnd="@drawable/ic_calendar"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:drawableTint="@color/purple"
+                    android:focusable="false"
+                    android:fontFamily="@font/georgia"
+                    android:hint="15-06-2020"
+                    android:maxLines="1"
+                    android:padding="@dimen/_10sdp"
+                    android:textSize="@dimen/_14ssp" />
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_search1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintEnd_toEndOf="@+id/cv_search"
+                app:layout_constraintStart_toStartOf="@+id/cv_class"
+                app:layout_constraintTop_toBottomOf="@+id/cv_class">
+
+                <EditText
+                    android:id="@+id/edt_calendar1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableEnd="@drawable/ic_search"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:drawableTint="@color/purple"
+                    android:fontFamily="@font/georgia"
+                    android:hint="Search"
+                    android:maxLines="1"
+                    android:padding="@dimen/_8sdp"
+                    android:textSize="@dimen/_12sdp" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_studentList"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:scrollbars="none"
+                app:layout_constraintBottom_toTopOf="@id/btn_save"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_search1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/staffBackground"
+                android:fontFamily="@font/georgia"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/save"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </RelativeLayout>
+
+
+</layout>

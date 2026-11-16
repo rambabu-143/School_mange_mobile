@@ -1,0 +1,32 @@
+package com.mountcarmelschools.di.data.studentprofile
+
+
+import com.squareup.moshi.Json
+
+data class GetAllStateResponse(
+    @Json(name = "data")
+    val `data`: List<Data>,
+    @Json(name = "message")
+    val message: String?,
+    @Json(name = "status")
+    val status: Boolean?
+) {
+    data class Data(
+        @Json(name = "country_id")
+        val countryId: String?,
+        @Json(name = "created_at")
+        val createdAt: String?,
+        @Json(name = "_id")
+        val id: String?,
+        @Json(name = "is_deleted")
+        val isDeleted: Boolean?,
+        @Json(name = "state_code")
+        val stateCode: String?,
+        @Json(name = "state_name")
+        val stateName: String?,
+        @Json(name = "updated_at")
+        val updatedAt: String?,
+        @Json(name = "__v")
+        val v: Int?
+    )
+}

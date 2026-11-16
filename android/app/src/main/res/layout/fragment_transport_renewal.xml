@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="transportRenewalViewModel"
+            type="com.mountcarmelschools.ui.transportRenewal.TransportRenewalViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/grey_line_color"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/form"
+                android:visibility="gone"
+                android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/blue"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_5sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/georgia"
+                    android:gravity="center"
+                    android:text="MOUNT CARMEL SCHOOL"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia"
+                    android:gravity="center"
+                    android:id="@+id/header_address"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia"
+                    android:gravity="center"
+                    android:id="@+id/transportRenewalText"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp"
+
+                    />
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:elevation="@dimen/_10sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:fontFamily="@font/georgia_bold"
+                        android:text="Kindly indicate whether you want to renew or withdraw the transport facility for your ward."
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:fontFamily="@font/georgia_bold"
+                        android:text="@string/tick_one"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:id="@+id/renewRadioGroup"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/blue"
+                            android:id="@+id/renew"
+                            android:checked="true"
+                            android:fontFamily="@font/georgia"
+                            android:text="Renew" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/blue"
+                            android:id="@+id/withdraw"
+                            android:fontFamily="@font/georgia"
+                            android:text="Withdraw" />
+
+                    </RadioGroup>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/dark_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:fontFamily="@font/georgia"
+                        android:text="PLEASE NOTE :- THIS IS AN ADDITIONAL FACILITY PROVIDED BY THE SCHOOL AND NOT OBLIGATORY. APPLICATION DOES NOT AUTOMATICALLY GUARANTEE A SEAT. HOWEVER, FIRST PREFERENCE IS GIVEN TO RENEWING STUDENTS PROVIDED THEY APPLY IN TIME."
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/_10sdp"
+
+                        />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@color/dark_gray" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_toStartOf="@+id/studentImage"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:fontFamily="@font/georgia_bold"
+                                android:text="1. Name of the Student:"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_12sdp"
+
+                                />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/_5sdp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edt_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:clickable="false"
+                                    android:cursorVisible="false"
+                                    android:enabled="false"
+                                    android:editable="false"
+                                    android:focusable="false" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/studentImage"
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="@dimen/_80sdp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/dark_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:fontFamily="@font/georgia_bold"
+                        android:text="2. Admission No.:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+
+                        />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="@dimen/_5sdp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_admission"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="false"
+                            android:editable="false"
+                            android:cursorVisible="false"
+                            android:enabled="false"
+                            android:focusable="false" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/dark_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:fontFamily="@font/georgia_bold"
+                        android:text="3. Provisional Class-Section:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/georgia_bold"
+                        android:id="@+id/inYear"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="@dimen/_5sdp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_provisional"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="false"
+                            android:editable="false"
+                            android:cursorVisible="false"
+                            android:enabled="false"
+                            android:focusable="false" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/dark_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:fontFamily="@font/georgia_bold"
+                        android:text="4. Home Address:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="@dimen/_5sdp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="false"
+                            android:editable="false"
+                            android:cursorVisible="false"
+                            android:enabled="false"
+                            android:focusable="false" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:fontFamily="@font/georgia_italic"
+                        android:text="(Please contact School Fee Office for change in address)"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/georgia_bold"
+                            android:gravity="center_vertical"
+                            android:text="Mobile No.(For SMS):"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+
+                            />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_smsNo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                android:editable="false"
+                                android:cursorVisible="false"
+                                android:enabled="false"
+                                android:focusable="false"
+                                android:text="" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:gravity="center_vertical"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/georgia_bold"
+                            android:gravity="center_vertical"
+                            android:text="Father's Mobile:"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+
+                            />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_fatherNo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                android:editable="false"
+                                android:focusable="false"
+                                android:cursorVisible="false"
+                                android:enabled="false"
+                                android:text="" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:gravity="center_vertical"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/georgia_bold"
+                            android:gravity="center_vertical"
+                            android:text="Mother's Mobile:"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+
+                            />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_motherNo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                android:editable="false"
+                                android:focusable="false"
+                                android:cursorVisible="false"
+                                android:enabled="false"
+                                android:text="" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/dark_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:fontFamily="@font/georgia_bold"
+                        android:text="5. Whether any sibling is using school transport:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+
+                        />
+
+                    <RadioGroup
+                        android:id="@+id/siblingRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/yesRadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:buttonTint="@color/blue"
+                            android:fontFamily="@font/georgia"
+                            android:text="Yes" />
+
+                        <RadioButton
+                            android:id="@+id/noRadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/blue"
+                            android:checked="true"
+                            android:fontFamily="@font/georgia"
+                            android:text="No" />
+
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:id="@+id/admissionNoContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:hint="Admission No*"
+                            android:padding="@dimen/_5sdp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edtAdmissionNo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.8"
+                                android:digits="0123456789"
+                                android:inputType="number"
+                                android:maxLength="8" />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/addAdmissionNO"
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_weight=".2"
+                            android:background="@drawable/button_background"
+                            android:fontFamily="@font/georgia"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/_16sdp"
+                            android:paddingTop="@dimen/_8sdp"
+                            android:paddingEnd="@dimen/_16sdp"
+                            android:paddingBottom="@dimen/_8sdp"
+                            android:text="Add"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/siblingContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="vertical" />
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/dark_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:fontFamily="@font/georgia_bold"
+                        android:text="6. Route Details:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/georgia_bold"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Morning Route:"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <TextView
+                                    android:id="@+id/morningValue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:fontFamily="@font/georgia"
+                                    android:padding="@dimen/_5sdp"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_12sdp" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/border" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/georgia_bold"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Pick up Point:"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <TextView
+                                    android:id="@+id/pickUpValue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:fontFamily="@font/georgia"
+                                    android:padding="@dimen/_5sdp"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_12sdp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:padding="@dimen/_5sdp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/georgia_bold"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Pick up Time:"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <TextView
+                                    android:id="@+id/dropOfValue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/georgia"
+                                    android:padding="@dimen/_5sdp"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_12sdp" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/border" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/georgia_bold"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Afternoon Route:"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <TextView
+                                    android:id="@+id/afterNoonValue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:fontFamily="@font/georgia"
+                                    android:padding="@dimen/_5sdp"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_12sdp" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/border" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/georgia_bold"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="Drop off Point:"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <TextView
+                                    android:id="@+id/dropOffPoint"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:fontFamily="@font/georgia"
+                                    android:padding="@dimen/_5sdp"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_12sdp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:padding="@dimen/_5sdp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/georgia_bold"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="@string/drop_off_time"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <TextView
+                                    android:id="@+id/dropOfTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/georgia"
+                                    android:padding="@dimen/_5sdp"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_12sdp" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/border" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/georgia"
+                        android:text="1. Request for availing bus facility in the mid-session is not allowed, it is to be w.e.f. April."
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/georgia"
+                        android:text="2. Withdrawal from the bus facility is only allowed at the end of a quarter with a fortnight's notice in writing."
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/georgia"
+                        android:text="3. Filling of this form is no guarantee that the seat in the bus will be automatically or immediately available."
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/georgia"
+                        android:text="4. Students must carry the ‘Bus Card’ while travelling in the school bus &amp; show the card when asked."
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/georgia"
+                        android:text="5. Roll call is taken in the bus. If a child deliberately misses the bus in the afternoon, thrice during the session, he/she may be debarred from using the bus."
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp" />
+
+
+                    <TextView
+                        android:id="@+id/submit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_25sdp"
+                        android:layout_weight=".8"
+                        android:background="@drawable/button_background"
+                        android:fontFamily="@font/georgia"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_16sdp"
+                        android:paddingTop="@dimen/_8sdp"
+                        android:paddingEnd="@dimen/_16sdp"
+                        android:paddingBottom="@dimen/_8sdp"
+                        android:text="Save Details"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14ssp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:id="@+id/placeHolder"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:foregroundGravity="center"
+                    android:layout_margin="@dimen/_30sdp"
+                    android:textColor="@color/black"
+                    android:id="@+id/placeHolderText"
+                    />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</layout>
+    

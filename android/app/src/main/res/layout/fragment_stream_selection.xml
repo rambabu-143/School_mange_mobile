@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="streamSelectionViewModel"
+            type="com.mountcarmelschools.ui.streamSelection.StreamSelectionViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+         android:fillViewport="true"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:id="@+id/selectionLayout"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/submissionDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/georgia_bold"
+                android:padding="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/georgia_bold"
+                android:text="Eligibility Criteria"
+                android:textColor="@color/blue_container"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/submissionDate" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Select Combination*"
+                    android:orientation="horizontal"
+                    android:textColorHint="@color/blue_container"
+                    android:textSize="@dimen/_14sdp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/combinationDropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_2sdp"
+                        android:layout_weight="1"
+                        android:hint="1) Select Subject"
+                        android:orientation="horizontal"
+                        android:textColorHint="@color/blue_container"
+                        android:textSize="@dimen/_14sdp"
+                        app:hintTextColor="@color/blue_container"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/selectSubjectTextView1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/selectSubject"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_2sdp"
+                        android:layout_weight="1"
+                        android:hint="2) Select Subject"
+                        android:orientation="horizontal"
+
+                        android:textColorHint="@color/blue_container"
+                        android:textSize="@dimen/_14sdp"
+                        app:hintTextColor="@color/blue_container"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/selectSubjectTextView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_2sdp"
+                        android:layout_weight="1"
+                        android:hint="3) Select Subject"
+                        android:orientation="horizontal"
+                        android:textColorHint="@color/blue_container"
+                        android:textSize="@dimen/_14sdp"
+                        app:hintTextColor="@color/blue_container"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/selectSubjectTextView3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_2sdp"
+                        android:layout_weight="1"
+                        android:hint="4) Select Subject"
+                        android:orientation="horizontal"
+                        android:textColorHint="@color/blue_container"
+                        android:textSize="@dimen/_14sdp"
+                        app:hintTextColor="@color/blue_container"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/selectSubjectTextView4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_2sdp"
+                        android:layout_weight="1"
+                        android:hint="5) Select Subject"
+                        android:orientation="horizontal"
+                        android:textColorHint="@color/blue_container"
+                        android:textSize="@dimen/_14sdp"
+                        app:hintTextColor="@color/blue_container"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/selectSubjectTextView5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_2sdp"
+                        android:layout_weight="1"
+                        android:hint="6) Select Additional Subject"
+                        android:orientation="horizontal"
+                        android:textColorHint="@color/blue_container"
+                        android:textSize="@dimen/_14sdp"
+                        app:hintTextColor="@color/blue_container"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/selectSubjectTextView6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/remarkLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:hint="Enter Remark"
+                    android:textColorHint="@color/blue_container"
+                    app:boxStrokeColor="@color/blue_container"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="200"
+                    app:hintTextColor="@color/blue_container">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_remark"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        android:gravity="top|left"
+                        android:inputType="text"
+                        android:maxLength="200" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/buttonLayout"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/btn_update"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_margin="@dimen/_15sdp"
+                        android:layout_weight=".8"
+                        android:background="@drawable/button_background"
+                        android:fontFamily="@font/georgia"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_20sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingEnd="@dimen/_20sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:text="Update"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13ssp" />
+
+
+                    <TextView
+                        android:id="@+id/btn_cancel"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_margin="@dimen/_15sdp"
+                        android:layout_weight=".8"
+                        android:background="@drawable/button_background"
+                        android:backgroundTint="@color/red"
+                        android:fontFamily="@font/georgia"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_20sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingEnd="@dimen/_20sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:text="@string/cancel_txt"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13ssp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

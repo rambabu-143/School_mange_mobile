@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Class Publish Alert View Controller-->
+        <scene sceneID="xxV-Bq-CtV">
+            <objects>
+                <viewController storyboardIdentifier="ClassPublishAlertViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="auE-zW-NZB" customClass="ClassPublishAlertViewController" customModule="Mount_Carmel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uYV-VH-Wzw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aag-a5-gOn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i6L-kD-emH" customClass="RoundedView" customModule="Mount_Carmel" customModuleProvider="target">
+                                <rect key="frame" x="20" y="242" width="335" height="183"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ndP-4n-JY7">
+                                        <rect key="frame" x="16" y="10" width="303" height="148"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vvm-CQ-Vt5">
+                                                <rect key="frame" x="0.0" y="0.0" width="303" height="15"/>
+                                                <subviews>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajg-wU-lPf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="303" height="10"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="10" id="ghE-BZ-Ndi"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uD9-rJ-qVr">
+                                                        <rect key="frame" x="257" y="-10" width="46" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="46" id="i11-XI-hWP"/>
+                                                            <constraint firstAttribute="height" constant="30" id="jAX-6U-Loh"/>
+                                                        </constraints>
+                                                        <state key="normal" image="popup_close"/>
+                                                        <connections>
+                                                            <action selector="actionCloseClick:" destination="auE-zW-NZB" eventType="touchUpInside" id="6Fu-Xd-Y2h"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="ajg-wU-lPf" firstAttribute="leading" secondItem="Vvm-CQ-Vt5" secondAttribute="leading" id="2nT-Tz-SP1"/>
+                                                    <constraint firstItem="uD9-rJ-qVr" firstAttribute="centerY" secondItem="ajg-wU-lPf" secondAttribute="centerY" id="72c-UK-hOD"/>
+                                                    <constraint firstItem="ajg-wU-lPf" firstAttribute="top" secondItem="Vvm-CQ-Vt5" secondAttribute="top" id="7SK-Xf-p56"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ajg-wU-lPf" secondAttribute="trailing" id="DqA-dO-BWd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="uD9-rJ-qVr" secondAttribute="trailing" id="qM9-O7-mNw"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ajg-wU-lPf" secondAttribute="bottom" constant="5" id="wNv-Mn-WEZ"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l6h-aJ-Icj">
+                                                <rect key="frame" x="0.0" y="31" width="303" height="51"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations for motivating students of VB!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jg5-vu-yJS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="303" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click here to publish card" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VqM-Z3-DdM">
+                                                        <rect key="frame" x="0.0" y="21" width="303" height="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="jg5-vu-yJS" firstAttribute="top" secondItem="l6h-aJ-Icj" secondAttribute="top" id="3XN-hg-kNF"/>
+                                                    <constraint firstAttribute="bottom" secondItem="VqM-Z3-DdM" secondAttribute="bottom" constant="5" id="75r-MV-W7W"/>
+                                                    <constraint firstAttribute="trailing" secondItem="jg5-vu-yJS" secondAttribute="trailing" id="7NX-Qf-XoS"/>
+                                                    <constraint firstItem="VqM-Z3-DdM" firstAttribute="leading" secondItem="l6h-aJ-Icj" secondAttribute="leading" id="7rs-BP-4XD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="VqM-Z3-DdM" secondAttribute="trailing" id="8xY-Al-2OB"/>
+                                                    <constraint firstItem="VqM-Z3-DdM" firstAttribute="top" secondItem="jg5-vu-yJS" secondAttribute="bottom" constant="5" id="Gog-id-eM8"/>
+                                                    <constraint firstItem="jg5-vu-yJS" firstAttribute="leading" secondItem="l6h-aJ-Icj" secondAttribute="leading" id="mBQ-hd-fFL"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPz-dR-IOC">
+                                                <rect key="frame" x="0.0" y="98" width="303" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ctn-1H-en9" customClass="RoundedButton" customModule="Mount_Carmel" customModuleProvider="target">
+                                                        <rect key="frame" x="86.5" y="5" width="130" height="40"/>
+                                                        <color key="backgroundColor" name="AppLogoColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="H35-aC-tJK"/>
+                                                            <constraint firstAttribute="width" constant="130" id="dYK-Wx-nx5"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                        <state key="normal" title="Publish">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="actionPublishClick:" destination="auE-zW-NZB" eventType="touchUpInside" id="Xod-mN-3pq"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="Ctn-1H-en9" firstAttribute="centerX" secondItem="sPz-dR-IOC" secondAttribute="centerX" id="6yL-at-Dds"/>
+                                                    <constraint firstAttribute="height" constant="50" id="7Jt-Ap-8m1"/>
+                                                    <constraint firstItem="Ctn-1H-en9" firstAttribute="centerY" secondItem="sPz-dR-IOC" secondAttribute="centerY" id="aZf-bi-7G9"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ndP-4n-JY7" secondAttribute="bottom" constant="25" id="IIb-of-PEw"/>
+                                    <constraint firstItem="ndP-4n-JY7" firstAttribute="leading" secondItem="i6L-kD-emH" secondAttribute="leading" constant="16" id="dli-zp-h3k"/>
+                                    <constraint firstItem="ndP-4n-JY7" firstAttribute="top" secondItem="i6L-kD-emH" secondAttribute="top" constant="10" id="nTH-k5-8yJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ndP-4n-JY7" secondAttribute="trailing" constant="16" id="xGB-Ph-ffy"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jeh-x5-yef"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="i6L-kD-emH" firstAttribute="centerX" secondItem="uYV-VH-Wzw" secondAttribute="centerX" id="5Ag-fK-ir8"/>
+                            <constraint firstItem="Aag-a5-gOn" firstAttribute="leading" secondItem="Jeh-x5-yef" secondAttribute="leading" id="Kaa-yf-isT"/>
+                            <constraint firstItem="Aag-a5-gOn" firstAttribute="top" secondItem="Jeh-x5-yef" secondAttribute="top" id="OYC-i0-hic"/>
+                            <constraint firstItem="Jeh-x5-yef" firstAttribute="bottom" secondItem="Aag-a5-gOn" secondAttribute="bottom" id="PaN-BA-BUb"/>
+                            <constraint firstItem="Jeh-x5-yef" firstAttribute="trailing" secondItem="i6L-kD-emH" secondAttribute="trailing" constant="20" id="Se3-zj-7RZ"/>
+                            <constraint firstItem="i6L-kD-emH" firstAttribute="centerY" secondItem="uYV-VH-Wzw" secondAttribute="centerY" id="gae-63-AtI"/>
+                            <constraint firstItem="i6L-kD-emH" firstAttribute="leading" secondItem="Jeh-x5-yef" secondAttribute="leading" constant="20" id="pgG-lR-60b"/>
+                            <constraint firstItem="Jeh-x5-yef" firstAttribute="trailing" secondItem="Aag-a5-gOn" secondAttribute="trailing" id="wIu-rV-vAV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnPublish" destination="Ctn-1H-en9" id="616-cy-scI"/>
+                        <outlet property="lblAlertTitle" destination="ajg-wU-lPf" id="wxF-BC-Q2M"/>
+                        <outlet property="lblClick" destination="VqM-Z3-DdM" id="IFz-4J-QjZ"/>
+                        <outlet property="lblCongratulate" destination="jg5-vu-yJS" id="8Ac-hN-Zcr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vuW-dw-lYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1708.6956521739132" y="154.6875"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="Ctn-1H-en9">
+            <size key="intrinsicContentSize" width="53" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="popup_close" width="24" height="24"/>
+        <namedColor name="AppLogoColor">
+            <color red="0.21176470816135406" green="0.3803921639919281" blue="0.63921570777893066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

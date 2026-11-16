@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/parentBackground"
+
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            app:cardCornerRadius="@dimen/_5sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_1sdp">
+
+                <RelativeLayout
+                    android:id="@+id/cv_type"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:background="@drawable/lightgrey_background"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_period"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/georgia"
+
+                        android:layout_margin="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:text="M"
+                        android:textSize="@dimen/_16sdp" />
+                </RelativeLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_subject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia"
+
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toEndOf="@id/cv_type"
+                    app:layout_constraintTop_toTopOf="@id/cv_type" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:id="@+id/time"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/georgia"
+
+                    app:layout_constraintBottom_toBottomOf="@id/cv_type"
+                    app:layout_constraintStart_toEndOf="@id/cv_type"
+                    app:layout_constraintTop_toBottomOf="@id/tv_subject" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</layout>

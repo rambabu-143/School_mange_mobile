@@ -1,0 +1,43 @@
+platform :ios, '13.4'
+
+linkage = ENV['USE_FRAMEWORKS']
+if linkage != nil
+  Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
+  use_frameworks! :linkage => linkage.to_sym
+end
+
+target 'MountCarmel' do
+  pod 'Alamofire', '~> 4.9.1'
+  pod 'SVProgressHUD', '2.2.5'
+  pod 'SDWebImage', '5.7.4'
+  
+  # Pods for MountCarmel
+  pod "ESTabBarController-swift", '2.8.0'
+  pod 'AKSideMenu', '1.4.6'
+  pod 'FSCalendar', '2.8.4'
+  pod 'ScalingCarousel', '3.0'
+  #pod "TPKeyboardAvoidingSwift"
+  pod 'DropDown', '2.3.13'
+  pod 'IQKeyboardManagerSwift', '6.5.5'
+  pod 'SKPhotoBrowser', '6.1.0'
+  pod "TTGSnackbar", '1.10.3'
+  pod 'SVPinView', '~> 1.0'
+  
+  pod 'GoogleSignIn', '6.1.0'
+  pod 'Firebase/Auth', '8.14.0'
+  pod 'Firebase/Core', '8.14.0'
+  pod 'Firebase/Messaging', '8.14.0'
+  pod 'Firebase/Crashlytics', '8.14.0'
+  pod 'Firebase/Analytics', '8.14.0'
+  
+  pod 'DTTextField', '0.7.0'
+  
+  target 'MountCarmelTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'MountCarmelUITests' do
+    # Pods for testing
+  end
+end

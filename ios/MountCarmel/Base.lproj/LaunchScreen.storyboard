@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch_logo" translatesAutoresizingMaskIntoConstraints="NO" id="h6E-Sp-KRi">
+                                <rect key="frame" x="40" y="33.5" width="295" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are labourers together with God" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMf-rV-ZDH">
+                                <rect key="frame" x="55" y="546.5" width="300" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="WQp-cm-nt3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="18"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 COR 3:9" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7M-Xv-1hh">
+                                <rect key="frame" x="55" y="567" width="300" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Epn-S8-03V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="18"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zMf-rV-ZDH" secondAttribute="bottom" constant="100" id="NXN-LY-sVD"/>
+                            <constraint firstItem="h6E-Sp-KRi" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="adL-rU-yTB"/>
+                            <constraint firstItem="O7M-Xv-1hh" firstAttribute="trailing" secondItem="zMf-rV-ZDH" secondAttribute="trailing" id="buR-FE-Mi8"/>
+                            <constraint firstItem="h6E-Sp-KRi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="ciY-cP-5Ln"/>
+                            <constraint firstItem="h6E-Sp-KRi" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="f8V-8w-CeS"/>
+                            <constraint firstItem="O7M-Xv-1hh" firstAttribute="top" secondItem="zMf-rV-ZDH" secondAttribute="bottom" id="ibZ-G7-EOm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zMf-rV-ZDH" secondAttribute="trailing" constant="20" id="kXQ-DL-dYH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h6E-Sp-KRi" secondAttribute="trailing" constant="40" id="uFD-HK-PEQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Launch_logo" width="600" height="600"/>
+    </resources>
+</document>

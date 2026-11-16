@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TotalAmountCell" rowHeight="79" id="KGk-i7-Jjw" customClass="TotalAmountCell" customModule="MountCarmel" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="321" height="79"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="321" height="79"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Do2-Hr-0Uj">
+                        <rect key="frame" x="0.0" y="10" width="321" height="50"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lG1-a9-oCy">
+                                <rect key="frame" x="0.0" y="5" width="321" height="45"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Fees" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAW-NE-e81">
+                                        <rect key="frame" x="0.0" y="0.0" width="221" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <color key="textColor" red="0.83921568629999999" green="0.32156862749999998" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₹ 102060" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Flt-Vs-PNo">
+                                        <rect key="frame" x="221" y="0.0" width="100" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="cHp-iv-SwU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <color key="textColor" red="0.83921568629999999" green="0.32156862749999998" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lG1-a9-oCy" firstAttribute="leading" secondItem="Do2-Hr-0Uj" secondAttribute="leading" id="0m1-8n-OBQ"/>
+                            <constraint firstAttribute="trailing" secondItem="lG1-a9-oCy" secondAttribute="trailing" id="1Jn-iB-LQW"/>
+                            <constraint firstAttribute="bottom" secondItem="lG1-a9-oCy" secondAttribute="bottom" id="H7F-3F-cEX"/>
+                            <constraint firstAttribute="height" constant="50" id="KfX-G3-r0T"/>
+                            <constraint firstItem="lG1-a9-oCy" firstAttribute="top" secondItem="Do2-Hr-0Uj" secondAttribute="top" constant="5" id="bIt-m3-u9h"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Do2-Hr-0Uj" secondAttribute="trailing" id="076-bG-ZjX"/>
+                    <constraint firstItem="Do2-Hr-0Uj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="MXH-Y2-0Xi"/>
+                    <constraint firstAttribute="bottom" secondItem="Do2-Hr-0Uj" secondAttribute="bottom" id="Utt-rt-9Zh"/>
+                    <constraint firstItem="Do2-Hr-0Uj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="avt-He-x5S"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="lblTotalAmount" destination="Flt-Vs-PNo" id="8CC-ZF-5q4"/>
+            </connections>
+            <point key="canvasLocation" x="138.40579710144928" y="103.45982142857143"/>
+        </tableViewCell>
+    </objects>
+</document>

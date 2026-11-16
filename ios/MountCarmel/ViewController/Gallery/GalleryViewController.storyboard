@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Gallery View Controller-->
+        <scene sceneID="Sss-DI-aLq">
+            <objects>
+                <viewController storyboardIdentifier="GalleryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bxt-9x-FCH" customClass="GalleryViewController" customModule="MountCarmel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5jh-RJ-PSQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xzx-GE-aju" customClass="NavigationBarView" customModule="MountCarmel" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2zd-so-kti"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tFr-GB-xTX">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.76862745098039209" green="0.76078431372549016" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Bxt-9x-FCH" id="YEq-3M-ohy"/>
+                                    <outlet property="delegate" destination="Bxt-9x-FCH" id="1Sv-rQ-ISI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tFr-GB-xTX" firstAttribute="top" secondItem="Xzx-GE-aju" secondAttribute="bottom" id="OJG-ko-Byd"/>
+                            <constraint firstItem="Xzx-GE-aju" firstAttribute="leading" secondItem="WuL-ow-8yZ" secondAttribute="leading" id="Yhp-Yx-alN"/>
+                            <constraint firstItem="WuL-ow-8yZ" firstAttribute="trailing" secondItem="tFr-GB-xTX" secondAttribute="trailing" id="hJz-tb-Ix6"/>
+                            <constraint firstItem="Xzx-GE-aju" firstAttribute="top" secondItem="WuL-ow-8yZ" secondAttribute="top" id="mvx-aa-0Uq"/>
+                            <constraint firstItem="Xzx-GE-aju" firstAttribute="trailing" secondItem="WuL-ow-8yZ" secondAttribute="trailing" id="psz-NI-M99"/>
+                            <constraint firstItem="WuL-ow-8yZ" firstAttribute="bottom" secondItem="tFr-GB-xTX" secondAttribute="bottom" id="sXJ-pf-xsy"/>
+                            <constraint firstItem="tFr-GB-xTX" firstAttribute="leading" secondItem="WuL-ow-8yZ" secondAttribute="leading" id="wSh-D3-XNM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WuL-ow-8yZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="navigationView" destination="Xzx-GE-aju" id="NHe-FT-pOI"/>
+                        <outlet property="tblGalleryList" destination="tFr-GB-xTX" id="CLi-Ua-oAw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9AL-P0-fTi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101" y="119"/>
+        </scene>
+    </scenes>
+</document>

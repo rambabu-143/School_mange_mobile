@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Idl-c3-MrV">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--School Calendar View Controller-->
+        <scene sceneID="6dP-M1-nad">
+            <objects>
+                <viewController storyboardIdentifier="SchoolCalendarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Idl-c3-MrV" customClass="SchoolCalendarViewController" customModule="Mount_Carmel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yoY-Gs-YGh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOC-w7-HgG" customClass="NavigationBarView" customModule="Mount_Carmel" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="i6d-no-gOG"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A6r-Uo-sAd">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="2yH-35-kOh">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="423"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CVE-EF-S9W" customClass="FSCalendar">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="343"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="300" id="vwm-eV-ApK"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="NO"/>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderSelectionColor">
+                                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="titleSelectionColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="titleWeekendColor">
+                                                    <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                                                    <color key="value" name="AppLogoColor"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="eventDefaultColor">
+                                                    <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="todaySelectionColor">
+                                                    <color key="value" name="AppLogoColor"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <outlet property="dataSource" destination="Idl-c3-MrV" id="F8z-jc-WHa"/>
+                                                <outlet property="delegate" destination="Idl-c3-MrV" id="O2h-k1-Chq"/>
+                                            </connections>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="274-Jd-KJA">
+                                            <rect key="frame" x="0.0" y="353" width="375" height="50"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="w74-Tr-QMV">
+                                                    <rect key="frame" x="20" y="0.0" width="335" height="50"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="h4g-A2-g4s">
+                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MW9-3z-qYx" customClass="RoundedButton" customModule="Mount_Carmel" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="50"/>
+                                                                    <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="15"/>
+                                                                    <state key="normal" title="Event">
+                                                                        <color key="titleColor" systemColor="systemPurpleColor"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="maxRadius" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="actionEventClick:" destination="Idl-c3-MrV" eventType="touchUpInside" id="bFr-JQ-ce9"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fbt-T5-Efl" customClass="RoundedButton" customModule="Mount_Carmel" customModuleProvider="target">
+                                                                    <rect key="frame" x="175" y="0.0" width="160" height="50"/>
+                                                                    <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="15"/>
+                                                                    <state key="normal" title="Holiday">
+                                                                        <color key="titleColor" red="0.96862745289999996" green="0.78039217000000005" blue="0.34509804840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="maxRadius" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="actionHolidayClick:" destination="Idl-c3-MrV" eventType="touchUpInside" id="Xvn-Cb-XVa"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0j-dz-aoT" customClass="RoundedButton" customModule="Mount_Carmel" customModuleProvider="target">
+                                                                    <rect key="frame" x="335" y="0.0" width="0.0" height="50"/>
+                                                                    <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="15"/>
+                                                                    <state key="normal" title="Extra class"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="maxRadius" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35d-EZ-h8k">
+                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="0.0"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmp-9f-nJ9" customClass="RoundedButton" customModule="Mount_Carmel" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
+                                                                    <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="150" id="NX9-pU-mFW"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="15"/>
+                                                                    <state key="normal" title="Summer Holidays">
+                                                                        <color key="titleColor" red="0.9989371896" green="0.6399992108" blue="0.046068243680000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="maxRadius" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstItem="zmp-9f-nJ9" firstAttribute="top" secondItem="35d-EZ-h8k" secondAttribute="top" id="Tm0-qm-2L1"/>
+                                                                <constraint firstItem="zmp-9f-nJ9" firstAttribute="leading" secondItem="35d-EZ-h8k" secondAttribute="leading" id="hHg-Dy-0CS"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="w74-Tr-QMV" secondAttribute="trailing" constant="20" id="EPp-xr-S8R"/>
+                                                <constraint firstAttribute="bottom" secondItem="w74-Tr-QMV" secondAttribute="bottom" id="R7k-jS-98X"/>
+                                                <constraint firstAttribute="height" constant="50" id="S0x-lb-PMt"/>
+                                                <constraint firstItem="w74-Tr-QMV" firstAttribute="top" secondItem="274-Jd-KJA" secondAttribute="top" id="aR0-BA-WT6"/>
+                                                <constraint firstItem="w74-Tr-QMV" firstAttribute="leading" secondItem="274-Jd-KJA" secondAttribute="leading" constant="20" id="e6R-Lg-L0X"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="274-Jd-KJA" firstAttribute="top" secondItem="CVE-EF-S9W" secondAttribute="bottom" constant="10" id="3yI-3N-sBF"/>
+                                        <constraint firstItem="CVE-EF-S9W" firstAttribute="leading" secondItem="2yH-35-kOh" secondAttribute="leading" id="7Ai-67-ikF"/>
+                                        <constraint firstAttribute="trailing" secondItem="274-Jd-KJA" secondAttribute="trailing" id="9po-A2-OGk"/>
+                                        <constraint firstItem="CVE-EF-S9W" firstAttribute="top" secondItem="2yH-35-kOh" secondAttribute="top" id="jXW-F4-Pn0"/>
+                                        <constraint firstAttribute="bottom" secondItem="274-Jd-KJA" secondAttribute="bottom" constant="20" id="knC-Le-cQM"/>
+                                        <constraint firstItem="274-Jd-KJA" firstAttribute="leading" secondItem="2yH-35-kOh" secondAttribute="leading" id="u84-Ns-mbw"/>
+                                        <constraint firstAttribute="trailing" secondItem="CVE-EF-S9W" secondAttribute="trailing" id="wsU-o9-TYY"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="SCr-wX-PDP">
+                                        <rect key="frame" x="0.0" y="451" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SCr-wX-PDP" id="ogf-5s-SgW">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Idl-c3-MrV" id="1Vc-G7-1lh"/>
+                                    <outlet property="delegate" destination="Idl-c3-MrV" id="0zJ-2B-4yd"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fS8-ct-A0p"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="A6r-Uo-sAd" firstAttribute="trailing" secondItem="fS8-ct-A0p" secondAttribute="trailing" id="A4Z-ps-wFX"/>
+                            <constraint firstItem="A6r-Uo-sAd" firstAttribute="bottom" secondItem="fS8-ct-A0p" secondAttribute="bottom" id="WHl-ck-SzX"/>
+                            <constraint firstItem="dOC-w7-HgG" firstAttribute="top" secondItem="fS8-ct-A0p" secondAttribute="top" id="X4g-QJ-cUm"/>
+                            <constraint firstItem="fS8-ct-A0p" firstAttribute="trailing" secondItem="dOC-w7-HgG" secondAttribute="trailing" id="be7-Vr-lmf"/>
+                            <constraint firstItem="dOC-w7-HgG" firstAttribute="leading" secondItem="yoY-Gs-YGh" secondAttribute="leading" id="gpt-6i-WMf"/>
+                            <constraint firstItem="A6r-Uo-sAd" firstAttribute="top" secondItem="dOC-w7-HgG" secondAttribute="bottom" id="rX9-yv-AeF"/>
+                            <constraint firstItem="A6r-Uo-sAd" firstAttribute="leading" secondItem="fS8-ct-A0p" secondAttribute="leading" id="s5G-Lx-gAl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calendar" destination="CVE-EF-S9W" id="cUK-sl-bXW"/>
+                        <outlet property="navigationView" destination="dOC-w7-HgG" id="OkF-Fi-hAc"/>
+                        <outlet property="tableView" destination="A6r-Uo-sAd" id="fOV-UM-YRb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vAu-9C-Rg6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-696.79999999999995" y="-11.244377811094454"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="Fbt-T5-Efl">
+            <size key="intrinsicContentSize" width="62" height="30"/>
+        </designable>
+        <designable name="MW9-3z-qYx">
+            <size key="intrinsicContentSize" width="45" height="30"/>
+        </designable>
+        <designable name="u0j-dz-aoT">
+            <size key="intrinsicContentSize" width="84" height="30"/>
+        </designable>
+        <designable name="zmp-9f-nJ9">
+            <size key="intrinsicContentSize" width="140" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="AppLogoColor">
+            <color red="0.21176470816135406" green="0.3803921639919281" blue="0.63921570777893066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

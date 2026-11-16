@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/_15sdp"
+    android:orientation="vertical"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/georgia_bold"
+                android:text="Medical  "
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_14ssp" />
+
+            <ImageButton
+                android:layout_width="@dimen/_16sdp"
+                android:id="@+id/medicalEditIcon"
+                android:layout_height="@dimen/_16sdp"
+                android:visibility="gone"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:background="@drawable/blue_pen"
+                android:backgroundTint="@color/blue"
+                android:padding="@dimen/_10sdp" />
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@color/border"
+            android:backgroundTint="@color/staffBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/bloodGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <TextView
+                    android:id="@+id/alergies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia"
+                    android:lineSpacingMultiplier="1.1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+
+                <TextView
+                    android:id="@+id/height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia"
+                    android:lineSpacingMultiplier="1.1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia"
+                    android:lineSpacingMultiplier="1.1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+
+                <TextView
+                    android:id="@+id/bmi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia"
+                    android:lineSpacingMultiplier="1.1"
+                    android:text="BMI :"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/visionLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia"
+                    android:lineSpacingMultiplier="1.1"
+                    android:text="Vision Left : 6/6"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/visionRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia"
+                    android:lineSpacingMultiplier="1.1"
+                    android:text="Vision Right : 6/6"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/hearing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia"
+                    android:lineSpacingMultiplier="1.1"
+                    android:text="Hearing:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/hygiene"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia"
+                    android:visibility="gone"
+                    android:lineSpacingMultiplier="1.1"
+                    android:text="Hygiene : Good"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+
+                <TextView
+                    android:id="@+id/oralHyegiene"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/georgia_bold"
+                    android:lineSpacingMultiplier="1.1"
+                    android:text="Oral Hygiene"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:id="@+id/lips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia"
+                    android:lineSpacingMultiplier="1.1"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+                <TextView
+                    android:id="@+id/teeth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia"
+                    android:lineSpacingMultiplier="1.1"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/plaque"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia"
+                    android:lineSpacingMultiplier="1.1"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:textSize="@dimen/_12sdp" />
+                <TextView
+                    android:id="@+id/gums"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia"
+                    android:visibility="gone"
+                    android:lineSpacingMultiplier="1.1"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:textSize="@dimen/_12sdp" />
+                <TextView
+                    android:id="@+id/breath"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia"
+                    android:lineSpacingMultiplier="1.1"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+                <TextView
+                    android:id="@+id/dental_concerns"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/georgia"
+                    android:lineSpacingMultiplier="1.1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+                <TextView
+                    android:id="@+id/generalObservation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia"
+                    android:lineSpacingMultiplier="1.1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+                <TextView
+                    android:id="@+id/otherObservation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia"
+                    android:lineSpacingMultiplier="1.1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia"
+                    android:id="@+id/specoficAliments"
+                    android:lineSpacingMultiplier="1.1"
+                    android:text="Specific Aliments : No Abnormal Defect Detected"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>
+
+</layout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+
+    <domain-config cleartextTrafficPermitted="true">
+
+        <domain includeSubdomains="true">https://mountcarmelschool.com:4201/</domain>
+        <domain includeSubdomains="true">mountcarmelschool.com:4201</domain>
+        <domain includeSubdomains="true">mcop.mountcarmeldelhi.com</domain>
+        <domain includeSubdomains="true">commondatastorage.googleapis.com</domain>
+        <domain includeSubdomains="true">chttp://commondatastorage.googleapis.com</domain>
+
+    </domain-config>
+
+</network-security-config>

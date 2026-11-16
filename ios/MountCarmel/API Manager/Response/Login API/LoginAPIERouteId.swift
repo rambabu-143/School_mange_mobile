@@ -1,0 +1,26 @@
+//
+//	LoginAPIERouteId.swift
+//	Model file generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
+
+import Foundation
+
+class LoginAPIERouteId : WSResponseData {
+    
+    var routeName : String?
+    
+    
+    enum CodingKeys: String, CodingKey {
+        case routeName = "route_name"
+    }
+    required init(from decoder: Decoder) throws {
+        try super.init(from: decoder)
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        routeName = try values.decodeIfPresent(String.self, forKey: .routeName)
+    }
+    
+    public override func encode(to encoder: Encoder) throws {
+        try! super.encode(to: encoder)
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(routeName, forKey: .routeName)
+    }
+}

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="attendanceViewModel"
+            type="com.mountcarmelschools.ui.attendance.studentattendance.AttendanceViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.attendance.studentattendance.AttendanceFragment">
+
+        <!--        This is for student attendance details-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_student_attendance_details"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="match_parent">
+
+            <com.applandeo.materialcalendarview.CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:headerColor="@color/white"
+                app:disabledDaysLabelsColor="@color/grey_line_color"
+                app:highlightedDaysLabelsColor="@color/grey_line_color"
+                app:selectionLabelColor="@color/grey_line_color"
+                app:headerLabelColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@id/line_above_holyday"
+                app:layout_constraintTop_toTopOf="parent"
+                app:selectionColor="@color/black"
+                app:daysLabelsColor="@color/black"
+                app:eventsEnabled="true"
+                app:swipeEnabled="false"
+                app:todayLabelColor="@color/blue" />
+
+
+
+            <TextView
+                android:id="@+id/arrowDisable"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_120sdp"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:focusableInTouchMode="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+            <View
+                android:id="@+id/line_above_holyday"
+                app:layout_constraintBottom_toTopOf="@+id/holiday_layout"
+                android:background="@color/grey_line_color"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <LinearLayout
+                android:id="@+id/holiday_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:gravity="center_vertical|right"
+                app:layout_constraintBottom_toBottomOf="@+id/gl_middle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:background="@color/white"
+                app:layout_constraintRight_toRightOf="parent">
+
+
+
+
+                    <TextView
+                        android:id="@+id/yellow"
+                        android:layout_width="8.00dp"
+                        android:layout_height="8.00dp"
+                        android:background="@drawable/yellow_dot" />
+
+                    <TextView
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_toEndOf="@+id/yellow"
+                        android:fontFamily="@font/georgia"
+                        android:gravity="center_vertical"
+                        android:text="Holiday"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+
+            </LinearLayout>
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_middle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".65" />
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/holiday_layout">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/cv_student_image"
+                        android:layout_width="@dimen/_75sdp"
+                        android:layout_height="@dimen/_75sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:src="@drawable/ic_bottom_profile"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cv_student_image">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvPresent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/georgia"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/georgia"
+                                android:text="Present"
+                                android:textColor="@color/black"
+                                android:textSize="11sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/halfDay"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/orange_dot"
+                                android:fontFamily="@font/georgia"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/georgia"
+                                android:text="Half Day"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center"
+                                android:textSize="11sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvAbCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/red_dot"
+                                android:fontFamily="@font/georgia"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/georgia"
+                                android:text="Full Day"
+                                android:textColor="@color/black"
+                                android:textSize="11sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--        This is for Staff selection attendance-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_staff_mark_attendance"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="gone">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_select_classlabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Select Class"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                app:fontFamily="@font/georgia"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_class"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                app:layout_constraintEnd_toStartOf="@id/cv_calendar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_select_classlabel">
+
+                <Spinner
+                    android:id="@+id/sectionList"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:clickable="true"
+                    android:drawableEnd="@drawable/ic_arrow"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:maxLines="1"
+                    android:padding="@dimen/_5sdp" />
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_select_dateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:text="Select Date"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                app:fontFamily="@font/georgia"
+                app:layout_constraintStart_toStartOf="@id/cv_calendar"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_calendar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:onClick="@{attendanceViewModel::showDateDialog}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cv_class"
+                app:layout_constraintTop_toBottomOf="@id/tv_select_dateLabel">
+
+                <TextView
+                    android:id="@+id/edt_calendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableEnd="@drawable/ic_calendar"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:focusable="false"
+                    android:fontFamily="@font/georgia"
+                    android:maxLines="1"
+                    android:padding="@dimen/_10sdp"
+                    android:textSize="@dimen/_12ssp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_go"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:backgroundTint="@color/background"
+                android:padding="@dimen/_10sdp"
+                android:text="Go"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_class" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Please click on Go to mark attendance"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="@dimen/_40sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="@dimen/_18ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:alpha="0.2"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

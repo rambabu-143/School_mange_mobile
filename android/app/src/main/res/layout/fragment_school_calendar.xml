@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+         android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/parentLayout"
+            android:background="@color/white"
+            tools:context=".ui.calendar.SchoolCalendarFragment"
+            android:orientation="vertical">
+
+            <com.applandeo.materialcalendarview.CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:headerColor="@color/white"
+                app:disabledDaysLabelsColor="@color/grey_line_color"
+                app:highlightedDaysLabelsColor="@color/grey_line_color"
+                app:selectionLabelColor="@color/grey_line_color"
+                app:headerLabelColor="@color/black"
+                app:selectionColor="@color/black"
+                app:daysLabelsColor="@color/black"
+                app:todayLabelColor="@color/blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:eventsEnabled="true"
+                app:swipeEnabled="false"/>
+
+
+            <TextView
+                android:id="@+id/arrowDisable"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_120sdp"
+                android:visibility="gone"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:focusableInTouchMode="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:id="@+id/eventLayout"
+                android:weightSum="2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/calendarView"
+                >
+                <RelativeLayout
+                    android:id="@+id/rl_event"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@drawable/lightblue_background"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/calendarView">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:fontFamily="@font/georgia"
+                        android:textColor="@color/event_color"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:text="@string/event"
+                        android:textSize="@dimen/_14sdp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_holiday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/lightblue_background"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    app:layout_constraintStart_toEndOf="@id/rl_event"
+                    app:layout_constraintTop_toBottomOf="@id/calendarView">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/georgia"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:text="@string/holiday"
+                        android:textColor="@color/yellowDark"
+                        android:textSize="@dimen/_14sdp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:visibility="gone"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@id/eventLayout" />
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

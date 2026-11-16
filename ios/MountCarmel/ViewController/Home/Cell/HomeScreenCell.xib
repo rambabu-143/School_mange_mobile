@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeScreenCell" id="1uR-8b-vpq" customClass="HomeScreenCell" customModule="Mount_Carmel" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="132" height="132"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jva-cV-Kgg">
+                <rect key="frame" x="0.0" y="0.0" width="132" height="132"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJm-jn-4fT" customClass="RoundedView" customModule="Mount_Carmel" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="132" height="132"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="bau-8j-HWR">
+                        <rect key="frame" x="0.0" y="5" width="132" height="122"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Class_List" translatesAutoresizingMaskIntoConstraints="NO" id="iFt-ZZ-W4f">
+                                <rect key="frame" x="0.0" y="0.0" width="132" height="104"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class List" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEf-wa-cW5">
+                                <rect key="frame" x="16" y="106" width="100" height="16"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cEf-wa-cW5" secondAttribute="trailing" constant="16" id="54P-8L-hBF"/>
+                            <constraint firstItem="cEf-wa-cW5" firstAttribute="leading" secondItem="bau-8j-HWR" secondAttribute="leading" constant="16" id="Yip-Tr-Rdl"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="rJm-jn-4fT" firstAttribute="top" secondItem="jva-cV-Kgg" secondAttribute="top" id="4hG-rx-Mze"/>
+                    <constraint firstAttribute="trailing" secondItem="bau-8j-HWR" secondAttribute="trailing" id="ARc-a1-vMM"/>
+                    <constraint firstItem="bau-8j-HWR" firstAttribute="leading" secondItem="jva-cV-Kgg" secondAttribute="leading" id="FTP-BB-0J2"/>
+                    <constraint firstAttribute="bottom" secondItem="bau-8j-HWR" secondAttribute="bottom" constant="5" id="Ih6-v2-Ikb"/>
+                    <constraint firstItem="bau-8j-HWR" firstAttribute="top" secondItem="jva-cV-Kgg" secondAttribute="top" constant="5" id="PkO-oJ-vlj"/>
+                    <constraint firstAttribute="bottom" secondItem="rJm-jn-4fT" secondAttribute="bottom" id="Q8G-HO-hCj"/>
+                    <constraint firstAttribute="trailing" secondItem="rJm-jn-4fT" secondAttribute="trailing" id="UDd-Kt-Jca"/>
+                    <constraint firstItem="rJm-jn-4fT" firstAttribute="leading" secondItem="jva-cV-Kgg" secondAttribute="leading" id="icX-M9-5tf"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="81" height="75"/>
+            <connections>
+                <outlet property="menuImage" destination="iFt-ZZ-W4f" id="iG0-uP-c6O"/>
+                <outlet property="titleLabel" destination="cEf-wa-cW5" id="Gnj-Qy-chi"/>
+                <outlet property="viewBg" destination="rJm-jn-4fT" id="zU8-nN-IiS"/>
+            </connections>
+            <point key="canvasLocation" x="92.753623188405811" y="40.848214285714285"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Class_List" width="150" height="150"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

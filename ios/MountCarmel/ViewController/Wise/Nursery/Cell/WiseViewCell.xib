@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="TrajanPro-Bold.otf">
+            <string>TrajanPro-Bold</string>
+        </array>
+        <array key="TrajanPro-Regular.ttf">
+            <string>TrajanPro-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WiseViewCell" id="gTV-IL-0wX" customClass="WiseViewCell" customModule="Mount_Carmel" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="667"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="250" height="667"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8i-fD-1I4">
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="617"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nn3-eF-ddX" customClass="RoundedView" customModule="Mount_Carmel" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="240" width="250" height="377"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intellect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taA-0b-Kqj">
+                                        <rect key="frame" x="84" y="160" width="82.5" height="15"/>
+                                        <fontDescription key="fontDescription" name="TrajanPro-Bold" family="Trajan Pro" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="Msb-xv-EdD">
+                                        <rect key="frame" x="10" y="190" width="230" height="73"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlZ-Yl-eFo">
+                                                <rect key="frame" x="0.0" y="0.0" width="24" height="15"/>
+                                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For participating in farewell programme for class 3 (Choral recitation)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXs-NS-Io9">
+                                                <rect key="frame" x="0.0" y="34" width="221.5" height="39"/>
+                                                <fontDescription key="fontDescription" name="TrajanPro-Regular" family="Trajan Pro" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aai-u4-Vke">
+                                        <rect key="frame" x="20" y="283" width="210" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="mdv-LG-0TP"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rMx-42-mjk">
+                                        <rect key="frame" x="20" y="299" width="137.5" height="54.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Awarded By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AS6-mF-kug">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mrs. Ekta Ashana" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rzv-7G-GyW">
+                                                <rect key="frame" x="0.0" y="22.5" width="137.5" height="14"/>
+                                                <fontDescription key="fontDescription" name="TrajanPro-Bold" family="Trajan Pro" pointSize="14"/>
+                                                <color key="textColor" name="AppLogoColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01 March 2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pF-xH-AUK">
+                                                <rect key="frame" x="0.0" y="41.5" width="104.5" height="13"/>
+                                                <fontDescription key="fontDescription" name="TrajanPro-Regular" family="Trajan Pro" pointSize="13"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="rMx-42-mjk" firstAttribute="leading" secondItem="nn3-eF-ddX" secondAttribute="leading" constant="20" id="2Tx-4s-33Y"/>
+                                    <constraint firstItem="taA-0b-Kqj" firstAttribute="centerX" secondItem="nn3-eF-ddX" secondAttribute="centerX" id="BmZ-UK-Wqo"/>
+                                    <constraint firstAttribute="trailing" secondItem="aai-u4-Vke" secondAttribute="trailing" constant="20" id="C1D-qf-NGd"/>
+                                    <constraint firstItem="rMx-42-mjk" firstAttribute="top" secondItem="aai-u4-Vke" secondAttribute="bottom" constant="15" id="QuD-GY-jMx"/>
+                                    <constraint firstItem="Msb-xv-EdD" firstAttribute="top" secondItem="taA-0b-Kqj" secondAttribute="bottom" constant="15" id="Wck-ih-YB1"/>
+                                    <constraint firstItem="aai-u4-Vke" firstAttribute="leading" secondItem="nn3-eF-ddX" secondAttribute="leading" constant="20" id="Zl2-KL-OQN"/>
+                                    <constraint firstAttribute="trailing" secondItem="Msb-xv-EdD" secondAttribute="trailing" constant="10" id="gBi-ap-z7P"/>
+                                    <constraint firstItem="aai-u4-Vke" firstAttribute="top" secondItem="Msb-xv-EdD" secondAttribute="bottom" constant="20" id="j4p-L4-ZnX"/>
+                                    <constraint firstItem="taA-0b-Kqj" firstAttribute="top" secondItem="nn3-eF-ddX" secondAttribute="top" constant="160" id="xD8-iD-uON"/>
+                                    <constraint firstItem="Msb-xv-EdD" firstAttribute="leading" secondItem="nn3-eF-ddX" secondAttribute="leading" constant="10" id="xq5-V3-giP"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGz-zP-6fr" customClass="RoundedView" customModule="Mount_Carmel" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="120" width="250" height="250"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYm-8P-X3t">
+                                        <rect key="frame" x="104.5" y="80" width="41" height="90"/>
+                                        <fontDescription key="fontDescription" name="TrajanPro-Bold" family="Trajan Pro" pointSize="90"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="AppLogoColor"/>
+                                <constraints>
+                                    <constraint firstItem="WYm-8P-X3t" firstAttribute="centerX" secondItem="QGz-zP-6fr" secondAttribute="centerX" id="N64-8F-7Dy"/>
+                                    <constraint firstItem="WYm-8P-X3t" firstAttribute="centerY" secondItem="QGz-zP-6fr" secondAttribute="centerY" id="ceL-QB-vSU"/>
+                                    <constraint firstAttribute="width" constant="250" id="mCt-p5-AhX"/>
+                                    <constraint firstAttribute="width" secondItem="QGz-zP-6fr" secondAttribute="height" multiplier="1:1" id="oLo-5e-Wbu"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="maxRadius" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="125"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="QGz-zP-6fr" secondAttribute="trailing" id="5RE-YJ-KPy"/>
+                            <constraint firstAttribute="bottom" secondItem="nn3-eF-ddX" secondAttribute="bottom" id="A4m-hJ-6GV"/>
+                            <constraint firstItem="QGz-zP-6fr" firstAttribute="leading" secondItem="u8i-fD-1I4" secondAttribute="leading" id="Ad7-yQ-lxc"/>
+                            <constraint firstAttribute="trailing" secondItem="nn3-eF-ddX" secondAttribute="trailing" id="HEn-st-Oyr"/>
+                            <constraint firstItem="nn3-eF-ddX" firstAttribute="top" secondItem="QGz-zP-6fr" secondAttribute="top" multiplier="2" id="Ic3-Dc-shu"/>
+                            <constraint firstItem="QGz-zP-6fr" firstAttribute="top" secondItem="u8i-fD-1I4" secondAttribute="top" constant="120" id="qiq-eH-BMr"/>
+                            <constraint firstItem="nn3-eF-ddX" firstAttribute="leading" secondItem="u8i-fD-1I4" secondAttribute="leading" id="ute-Po-ktb"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="u8i-fD-1I4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="P8g-x5-vM0"/>
+                <constraint firstAttribute="trailing" secondItem="u8i-fD-1I4" secondAttribute="trailing" id="Txt-0s-AG3"/>
+                <constraint firstItem="u8i-fD-1I4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sUh-hM-fLz"/>
+                <constraint firstAttribute="bottom" secondItem="u8i-fD-1I4" secondAttribute="bottom" constant="50" id="tG5-oz-oJN"/>
+            </constraints>
+            <size key="customSize" width="268" height="420"/>
+            <connections>
+                <outlet property="lblCardType" destination="taA-0b-Kqj" id="PTa-M8-bgs"/>
+                <outlet property="lblCradTypeTopCons" destination="xD8-iD-uON" id="Xtd-at-ZRO"/>
+                <outlet property="lblDate" destination="0pF-xH-AUK" id="4CK-90-l8Q"/>
+                <outlet property="lblName" destination="Rzv-7G-GyW" id="C05-17-H6i"/>
+                <outlet property="lblRemark" destination="YXs-NS-Io9" id="viJ-f5-SZI"/>
+                <outlet property="mainView" destination="u8i-fD-1I4" id="nMA-AC-AO6"/>
+                <outlet property="titleType" destination="WYm-8P-X3t" id="d71-84-IfV"/>
+                <outlet property="viewcircleView" destination="QGz-zP-6fr" id="CTo-I1-GhA"/>
+            </connections>
+            <point key="canvasLocation" x="288.40579710144931" y="136.94196428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="AppLogoColor">
+            <color red="0.21176469326019287" green="0.38039219379425049" blue="0.63921570777893066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

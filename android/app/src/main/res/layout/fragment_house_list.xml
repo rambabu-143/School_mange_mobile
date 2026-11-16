@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_staff_mark_attendance"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/white">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_select_house_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/georgia"
+            android:text="@string/select_house"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:fontFamily="@font/georgia"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_house"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintEnd_toStartOf="@id/cv_class"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_select_house_label">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/houseList"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:background="@color/white"
+
+                android:drawableEnd="@drawable/ic_arrow"
+                android:drawablePadding="@dimen/_5sdp"
+                android:focusable="false"
+                android:clickable="false"
+                android:touchscreenBlocksFocus="true"
+                android:focusableInTouchMode="false"
+                android:maxLines="1"
+                android:padding="@dimen/_5sdp">
+
+                <TextView
+                    android:id="@+id/houseListSelectedCount"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:fontFamily="@font/georgia"
+                    android:gravity="center"
+                    android:hint="Select"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_dropdown_arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_select_classlabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/georgia"
+            android:text="@string/select_class"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toEndOf="@id/cv_house"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_class"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintEnd_toStartOf="@id/btn_go"
+            app:layout_constraintStart_toEndOf="@id/cv_house"
+            app:layout_constraintTop_toBottomOf="@id/tv_select_classlabel">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/classList"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:background="@color/white"
+                android:focusable="false"
+                android:clickable="false"
+                android:touchscreenBlocksFocus="true"
+                android:focusableInTouchMode="false"                android:drawableEnd="@drawable/ic_arrow"
+                android:drawablePadding="@dimen/_5sdp"
+                android:maxLines="1"
+                android:padding="@dimen/_5sdp">
+
+                <TextView
+                    android:id="@+id/classListSelectedCount"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/georgia"
+                    android:gravity="center"
+                    android:hint="Select"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:touchscreenBlocksFocus="true"
+                    android:focusableInTouchMode="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_dropdown_arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_go"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:backgroundTint="@color/staffBackground"
+            android:fontFamily="@font/georgia"
+            android:padding="@dimen/_9sdp"
+            android:text="@string/go"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintBottom_toBottomOf="@id/cv_class"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cv_class" />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fillViewport="true"
+            app:layout_constraintTop_toBottomOf="@id/cv_class">
+
+            <LinearLayout
+                android:id="@+id/layoutInflator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+
+
+        </HorizontalScrollView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_studentList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizontalScrollView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

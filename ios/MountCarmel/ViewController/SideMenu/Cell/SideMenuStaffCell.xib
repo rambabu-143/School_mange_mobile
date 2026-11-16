@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="TrajanPro-Regular.ttf">
+            <string>TrajanPro-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SideMenuStaffCell" id="Bdr-vc-4oY" customClass="SideMenuStaffCell" customModule="Mount_Carmel" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="132" height="132"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PZv-QM-rtX">
+                <rect key="frame" x="0.0" y="0.0" width="132" height="132"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Gox-xy-5aa">
+                        <rect key="frame" x="16" y="26.5" width="100" height="79"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Class_List" translatesAutoresizingMaskIntoConstraints="NO" id="KXH-u2-HE2">
+                                <rect key="frame" x="20" y="0.0" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="DVR-E2-ep1"/>
+                                    <constraint firstAttribute="height" constant="60" id="rHh-V0-7sj"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class List" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Ocb-pv-21K">
+                                <rect key="frame" x="0.0" y="65" width="100" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Hfj-B9-HTT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrajanPro-Regular" family="Trajan Pro" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLr-2G-Nrd">
+                        <rect key="frame" x="107" y="0.0" width="25" height="25"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7z-je-ulH">
+                                <rect key="frame" x="2" y="2" width="21" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0JW-QG-jf6"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="21" id="4wx-c6-24K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <constraints>
+                            <constraint firstItem="C7z-je-ulH" firstAttribute="top" secondItem="JLr-2G-Nrd" secondAttribute="top" constant="2" id="FTt-hH-jpZ"/>
+                            <constraint firstAttribute="trailing" secondItem="C7z-je-ulH" secondAttribute="trailing" constant="2" id="aiD-JB-ug6"/>
+                            <constraint firstItem="C7z-je-ulH" firstAttribute="leading" secondItem="JLr-2G-Nrd" secondAttribute="leading" constant="2" id="pjG-3q-wzb"/>
+                            <constraint firstAttribute="bottom" secondItem="C7z-je-ulH" secondAttribute="bottom" constant="2" id="wmi-ch-F2r"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="Gox-xy-5aa" firstAttribute="centerX" secondItem="PZv-QM-rtX" secondAttribute="centerX" id="3bT-1z-jzn"/>
+                    <constraint firstAttribute="trailing" secondItem="JLr-2G-Nrd" secondAttribute="trailing" id="PId-Te-7Mm"/>
+                    <constraint firstItem="Gox-xy-5aa" firstAttribute="centerY" secondItem="PZv-QM-rtX" secondAttribute="centerY" id="PwV-aM-nrq"/>
+                    <constraint firstItem="JLr-2G-Nrd" firstAttribute="top" secondItem="PZv-QM-rtX" secondAttribute="top" id="qtv-ef-CyS"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="81" height="75"/>
+            <connections>
+                <outlet property="lblNotification" destination="C7z-je-ulH" id="MCw-HD-R9a"/>
+                <outlet property="menuImage" destination="KXH-u2-HE2" id="n6f-2c-igl"/>
+                <outlet property="titleLabel" destination="Ocb-pv-21K" id="KzQ-7S-cz5"/>
+                <outlet property="viewNotification" destination="JLr-2G-Nrd" id="j4i-U7-Dvk"/>
+            </connections>
+            <point key="canvasLocation" x="-0.7246376811594204" y="253.45982142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Class_List" width="150" height="150"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

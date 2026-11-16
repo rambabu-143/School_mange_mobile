@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="parentModel"
+            type="com.mountcarmelschools.ui.parentlogin.ParentLoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.parentlogin.ParentLoginActivity">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_loginTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".12" />
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_160sdp"
+            android:src="@drawable/ic_logo1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gl_loginTop" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:background="@color/white"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_logo">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_15sdp">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edt_mobileNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:drawableLeft="@drawable/ic_mobile"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:fontFamily="@font/georgia"
+                    android:hint="@string/please_enter_your_mobile_number"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:text="@={parentModel.mobile}"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@+id/edt_mobileNumber"
+                    app:layout_constraintStart_toStartOf="@+id/edt_mobileNumber"
+                    app:layout_constraintTop_toBottomOf="@id/edt_mobileNumber">
+
+                    <TextView
+                        android:id="@+id/btn_submit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_25sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:background="@drawable/button_background"
+                        android:fontFamily="@font/georgia"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_40sdp"
+                        android:paddingEnd="@dimen/_40sdp"
+                        android:text="@string/login"
+                        android:textAllCaps="false"
+                        android:layout_centerInParent="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14ssp"
+                        android:visibility="@{parentModel.progressBar ? View.GONE  : View.VISIBLE  , default=visible}"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <ProgressBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="@dimen/_10sdp"
+                        android:visibility="@{parentModel.progressBar ? View.VISIBLE : View.GONE  , default=gone}"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="@dimen/_25sdp"
+                        android:indeterminateTint="@color/blue_container"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </RelativeLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

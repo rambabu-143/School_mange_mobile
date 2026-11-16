@@ -1,0 +1,48 @@
+{
+    "other_stories_count": 4,
+   
+    "other_stories": [
+        {
+            "id": "a2",
+            "last_updated": 1504799962,
+            "user": {
+                "id": "b2",
+                "name": "Terasa",
+                "picture": "https://randomuser.me/api/portraits/med/women/1.jpg"
+            },
+            "snaps_count": 1,
+            "snaps": [
+                {
+                    "id": "c8",
+                    "mime_type": "image",
+                    "url": "https://i.pinimg.com/736x/62/32/ef/6232ef50dd5b94cb97960e22c7c6dafb--galaxy-wallpaper-iphone-iphone-.jpg",
+                    "last_updated": "2m"
+                },
+                {
+                    "id": "c9",
+                    "mime_type": "image",
+                    "url": "https://static1.squarespace.com/static/5397b451e4b07f25d1682866/5643bc81e4b021eb442c7b72/5643bddee4b07810c0b2f749/1447280129681/Samsung-Galaxy-S5-Android-Wallpaper-Good-Dino-2.jpg",
+                    "last_updated": "2m"
+                },
+                {
+                    "id": "c13",
+                    "mime_type": "image",
+                    "url": "https://hdqwalls.com/download/8-bit-pixel-art-city-2o-1280x2120.jpg",
+                    "last_updated": "10m"
+                },
+                {
+                    "id": "c14",
+                    "mime_type": "image",
+                    "url": "https://i-cdn.phonearena.com/images/articles/257597-image/boom.jpg",
+                    "last_updated": "11m"
+                },
+                {
+                    "id": "c15",
+                    "mime_type": "image",
+                    "url": "http://www.designbolts.com/wp-content/uploads/2017/04/paris-iPhone-7-Wallpaper-HD.jpg",
+                    "last_updated": "12m"
+                }
+            ]
+        }
+    ]
+}

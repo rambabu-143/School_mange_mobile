@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="attendanceSummaryViewModel"
+            type="com.mountcarmelschools.ui.attendance.attendancesummary.AttendanceSummaryViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.attendance.attendancesummary.AttendanceSummaryFragment">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_select_dateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Select Date"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:fontFamily="@font/georgia"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_calendar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_select_dateLabel">
+
+            <TextView
+                android:id="@+id/edt_calendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:drawablePadding="@dimen/_20sdp"
+                android:focusable="false"
+                android:textColor="@color/black"
+                android:fontFamily="@font/georgia"
+                android:maxLines="1"
+                android:padding="@dimen/_10sdp" />
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_go"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:backgroundTint="@color/staffBackground"
+            android:fontFamily="@font/georgia"
+            android:padding="@dimen/_10sdp"
+            android:text="Search"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@id/cv_calendar"
+            app:layout_constraintStart_toEndOf="@id/cv_calendar"
+            app:layout_constraintTop_toTopOf="@id/cv_calendar" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_summary"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cv_calendar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

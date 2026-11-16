@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_10sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_serial_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:fontFamily="@font/georgia"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_student_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_student_image" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_student_image"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_weight=".2"
+                app:layout_constraintStart_toEndOf="@id/tv_serial_no"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_student_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_weight="0.6"
+                android:fontFamily="@font/georgia"
+                android:gravity="start"
+                android:maxLines="2"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_student_image"
+                app:layout_constraintTop_toTopOf="@id/iv_student_image" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_student_roll_no"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_weight="0.6"
+                android:fontFamily="@font/georgia"
+                android:gravity="start"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+
+                app:layout_constraintStart_toEndOf="@id/iv_student_image"
+                app:layout_constraintTop_toBottomOf="@id/tv_student_name" />
+
+            <LinearLayout
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_student_roll_no">
+
+                <LinearLayout
+                    android:id="@+id/tv_warning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_student_roll_no">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/georgia"
+                            android:text="Warning Card"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/pinkTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/georgia"
+                        android:text="(Pink)"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <CheckBox
+                        android:id="@+id/warningCheckBox"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:buttonTint="@color/pink_card"
+
+                        android:clickable="false"
+                        android:focusableInTouchMode="false"
+                        android:gravity="center"
+
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tv_tardy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp"
+                    app:layout_constraintEnd_toStartOf="@id/tv_stature"
+                    app:layout_constraintStart_toEndOf="@id/tv_worthy"
+                    app:layout_constraintTop_toTopOf="@id/tv_worthy">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/georgia"
+                        android:text="Tardy Card"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/yellowCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/georgia"
+                        android:text="(Yellow)"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <CheckBox
+                        android:id="@+id/tardyCheckBox"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:buttonTint="@color/yellow_color"
+                        android:clickable="false"
+                        android:focusableInTouchMode="false"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tv_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp"
+                    app:layout_constraintStart_toEndOf="@id/tv_intellect"
+                    app:layout_constraintTop_toTopOf="@id/tv_worthy">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/georgia"
+                        android:text="Red Card"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/redCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/georgia"
+                        android:text="(Red)"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <CheckBox
+                        android:id="@+id/redCheckBox"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:buttonTint="@color/red_card"
+                        android:clickable="false"
+                        android:focusableInTouchMode="false"
+                        android:gravity="center" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

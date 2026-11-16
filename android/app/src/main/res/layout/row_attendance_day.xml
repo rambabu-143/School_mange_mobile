@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_20sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_serial_no"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:text="1"
+                android:fontFamily="@font/georgia"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_student_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_student_image" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_student_image"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_weight=".2"
+                android:src="@drawable/ic_bottom_profile"
+                app:layout_constraintStart_toEndOf="@id/tv_serial_no"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_student_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/georgia"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_weight="0.6"
+                android:gravity="start"
+                android:text="Prabal Singh"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintStart_toEndOf="@id/iv_student_image"
+                app:layout_constraintTop_toTopOf="@id/iv_student_image" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_student_roll_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_weight="0.6"
+                android:gravity="start"
+                android:text="11305454"
+                android:fontFamily="@font/georgia"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintStart_toEndOf="@id/iv_student_image"
+                app:layout_constraintTop_toBottomOf="@id/tv_student_name" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@id/iv_student_image" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_label_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/georgia"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="@string/total_present"
+                android:textColor="@color/lightGrey"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_presnt_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:textColor="@color/purple"
+                android:fontFamily="@font/georgia"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_label_total"
+                app:layout_constraintTop_toBottomOf="@id/view" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_pre_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:visibility="gone"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="@string/pre"
+                android:textColor="@color/lightGrey"
+                android:textSize="@dimen/_13sdp"
+                android:fontFamily="@font/georgia"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tv_pre"
+                app:layout_constraintTop_toBottomOf="@id/view" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_pre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:textColor="@color/green"
+                android:fontFamily="@font/georgia"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

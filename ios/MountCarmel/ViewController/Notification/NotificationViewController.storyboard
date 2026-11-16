@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notification View Controller-->
+        <scene sceneID="FY5-Ue-lL9">
+            <objects>
+                <viewController storyboardIdentifier="NotificationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="llM-8c-9Mf" customClass="NotificationViewController" customModule="MountCarmel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t8Z-7o-xbK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vlF-UN-Ubw" customClass="NavigationBarView" customModule="MountCarmel" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="m4P-Sw-9OE"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hN0-h0-CW4">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="oKk-Ix-22b">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oKk-Ix-22b" id="4ui-X8-eMG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="llM-8c-9Mf" id="ebc-xZ-BP6"/>
+                                    <outlet property="delegate" destination="llM-8c-9Mf" id="gjd-J3-PmF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hN0-h0-CW4" firstAttribute="top" secondItem="vlF-UN-Ubw" secondAttribute="bottom" id="7wo-H2-jUG"/>
+                            <constraint firstItem="q8T-Cz-lDX" firstAttribute="trailing" secondItem="vlF-UN-Ubw" secondAttribute="trailing" id="Abz-kj-HCl"/>
+                            <constraint firstItem="q8T-Cz-lDX" firstAttribute="bottom" secondItem="hN0-h0-CW4" secondAttribute="bottom" id="V7t-vN-zGK"/>
+                            <constraint firstItem="q8T-Cz-lDX" firstAttribute="trailing" secondItem="hN0-h0-CW4" secondAttribute="trailing" id="VfW-80-jTi"/>
+                            <constraint firstItem="hN0-h0-CW4" firstAttribute="leading" secondItem="q8T-Cz-lDX" secondAttribute="leading" id="ZlH-BV-dYu"/>
+                            <constraint firstItem="vlF-UN-Ubw" firstAttribute="top" secondItem="q8T-Cz-lDX" secondAttribute="top" id="qvH-xN-yEx"/>
+                            <constraint firstItem="vlF-UN-Ubw" firstAttribute="leading" secondItem="t8Z-7o-xbK" secondAttribute="leading" id="vrM-Bd-z4t"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="q8T-Cz-lDX"/>
+                    </view>
+                    <connections>
+                        <outlet property="navigationView" destination="vlF-UN-Ubw" id="Pg2-dA-p1G"/>
+                        <outlet property="tableView" destination="hN0-h0-CW4" id="lD8-Hf-T4d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H3m-VM-qdL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13" y="-125"/>
+        </scene>
+    </scenes>
+</document>

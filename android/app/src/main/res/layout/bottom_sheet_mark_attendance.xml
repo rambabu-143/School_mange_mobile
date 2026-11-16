@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/offsetText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/_10sdp"
+        android:fontFamily="@font/georgia"
+        android:gravity="center"
+        android:text="Please select one option"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/_14sdp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/dark_gray" />
+
+    <TextView
+        android:id="@+id/mark_all_present"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_10sdp"
+        android:fontFamily="@font/georgia"
+        android:text="Mark All Present"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="@dimen/_18sdp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/dark_gray" />
+
+    <TextView
+        android:id="@+id/mark_all_absent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_10sdp"
+        android:fontFamily="@font/georgia"
+        android:text="Mark All Absent"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="@dimen/_18sdp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/dark_gray" />
+
+    <TextView
+        android:id="@+id/carry_forward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_10sdp"
+        android:fontFamily="@font/georgia"
+        android:text="Carry Forward"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="@dimen/_18sdp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/dark_gray" />
+
+    <TextView
+        android:id="@+id/cancel"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_40sdp"
+        android:background="@drawable/rounded_corner_textview"
+        android:backgroundTint="@color/red"
+        android:fontFamily="@font/georgia"
+        android:gravity="center"
+        android:paddingStart="@dimen/_20sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingEnd="@dimen/_20sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:text="Cancel"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_18sdp" />
+
+</LinearLayout>

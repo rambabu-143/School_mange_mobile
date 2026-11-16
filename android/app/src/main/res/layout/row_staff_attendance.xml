@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_20sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:id="@+id/parentLayout"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_serial_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:text="1"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_student_image"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_weight=".2"
+                android:src="@drawable/ic_bottom_profile"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_serial_no"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_student_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_weight="0.6"
+                android:fontFamily="@font/georgia"
+                android:gravity="start"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toStartOf="@id/cb_first_half"
+                app:layout_constraintStart_toEndOf="@id/iv_student_image"
+                app:layout_constraintTop_toTopOf="@id/iv_student_image" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_student_roll_no"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_weight="0.6"
+                android:fontFamily="@font/georgia"
+                android:gravity="start"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toStartOf="@id/cb_first_half"
+                app:layout_constraintStart_toEndOf="@id/iv_student_image"
+                app:layout_constraintTop_toBottomOf="@id/tv_student_name" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/cb_first_half"
+                android:layout_width="@dimen/_25sdp"
+                android:tag="unCheck"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/ic_white_checkbox"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/cb_second_half"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/cb_second_half"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:tag="unCheck"
+                android:background="@drawable/ic_white_checkbox"
+                app:layout_constraintBottom_toBottomOf="@id/cb_first_half"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/cb_first_half" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/house_name"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:layout_weight="1"
+            android:padding="@dimen/_10sdp"
+            android:fontFamily="@font/georgia"
+            android:gravity="start"
+            android:text="hmmm"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            />
+
+    </androidx.cardview.widget.CardView>
+</layout>

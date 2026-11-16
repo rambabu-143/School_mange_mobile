@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="selfAwareViewModel"
+            type="com.mountcarmelschools.ui.selfAwareness.SelfAwarenessViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/selfAwarenessForm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/blue_container"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/georgia_bold"
+                        android:text="Self Awareness Form"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16sdp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:fontFamily="@font/georgia"
+                        android:text="(All the fields are compulsory as your answers will reflect in the Final Assessment Record)"
+                        android:textColor="#BFFFFFFF"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:id="@+id/lastDateOfSubmission"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/georgia_italic"
+                        android:text="Last Date of Submission :"
+                        android:textColor="#BFFFFFFF"
+                        android:textSize="@dimen/_12sdp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/goalLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:hint="My Goal*"
+                        android:padding="@dimen/_5sdp"
+                        app:boxStrokeColor="@color/blue_container"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="80"
+                        app:errorEnabled="true"
+
+                        app:hintTextColor="@color/blue_container">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_goals"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:maxLength="80" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:background="@color/lightGrey" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/strengthLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:hint="My Strength*"
+                        android:padding="@dimen/_5sdp"
+                        app:boxStrokeColor="@color/blue_container"
+                        app:counterEnabled="true"
+
+                        app:counterMaxLength="80"
+                        app:errorEnabled="true"
+
+                        app:hintTextColor="@color/blue_container">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_strength"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+
+                            android:maxLength="80" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:background="@color/lightGrey" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/interestLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:hint="My Interest &amp; Hobbies*"
+                        android:padding="@dimen/_5sdp"
+                        app:boxStrokeColor="@color/blue_container"
+
+                        app:counterEnabled="true"
+                        app:counterMaxLength="80"
+                        app:errorEnabled="true"
+
+                        app:hintTextColor="@color/blue_container">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_interest"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+
+                            android:maxLength="80" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:background="@color/lightGrey" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/responsibleLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:hint="Responsibilities Discharged/Exceptional Achievements*"
+                        android:padding="@dimen/_5sdp"
+                        app:boxStrokeColor="@color/blue_container"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="80"
+                        app:errorEnabled="true"
+                        app:hintTextColor="@color/blue_container">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_responsible"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+
+
+                            android:maxLength="80" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <!--
+                                                android:textAppearance="@style/TextLabel"
+                    -->
+                    <TextView
+                        android:id="@+id/preview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_15sdp"
+                        android:layout_weight=".8"
+                        android:background="@drawable/button_background"
+                        android:fontFamily="@font/georgia"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_30sdp"
+                        android:paddingTop="@dimen/_8sdp"
+                        android:paddingEnd="@dimen/_30sdp"
+                        android:paddingBottom="@dimen/_8sdp"
+                        android:text="Preview"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13ssp" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/previewForm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#27838181"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/_20sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/georgia_bold"
+                    android:visibility="gone"
+                    android:text="Preview"
+                    android:textColor="@color/blue_container"
+                    android:textSize="@dimen/_18sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fillViewport="true"
+                    android:scrollbars="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_header"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/georgia_bold"
+                            android:includeFontPadding="true"
+                            android:text="@string/my_goal"
+                            android:textColor="@color/blue_container"
+                            android:textSize="@dimen/_14sdp" />
+
+                        <TextView
+                            android:id="@+id/tvGoal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/georgia"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="@dimen/_5sdp" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/georgia_bold"
+                            android:includeFontPadding="true"
+                            android:text="@string/my_strength"
+                            android:textColor="@color/blue_container"
+                            android:textSize="@dimen/_14sdp" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvStrength"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/georgia"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp" />
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="@dimen/_5sdp" />
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/georgia_bold"
+                            android:includeFontPadding="true"
+                            android:text="@string/my_interest_amp_hobbies"
+                            android:textColor="@color/blue_container"
+                            android:textSize="@dimen/_14sdp" />
+
+                        <TextView
+                            android:id="@+id/tvHobbies"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/georgia"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp" />
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="@dimen/_5sdp" />
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/georgia_bold"
+                            android:includeFontPadding="true"
+                            android:text="@string/responsibilities_discharged_exceptional_achievements"
+                            android:textColor="@color/blue_container"
+                            android:textSize="@dimen/_14sdp" />
+
+                        <TextView
+                            android:id="@+id/tvResponsibilities"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/georgia"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp" />
+
+
+                    </LinearLayout>
+                </ScrollView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

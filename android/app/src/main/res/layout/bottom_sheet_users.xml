@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Control Background -->
+        <LinearLayout
+            android:id="@+id/ll_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/txt_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                android:letterSpacing="0.05"
+                android:textColor="@color/darker_gray"
+                android:fontFamily="@font/georgia_bold"
+                android:backgroundTint="@color/transparent"
+                android:shadowColor="@color/transparent"
+                android:outlineSpotShadowColor="@color/transparent"
+                android:outlineAmbientShadowColor="@color/transparent"
+                android:textSize="@dimen/_10ssp" />
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/_16sdp">
+                <TextView
+                    android:id="@+id/txt_class_name"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:maxLines="1"
+                    android:ellipsize="middle"
+                    android:text="Students of Class _"
+                    android:textSize="@dimen/_11ssp"
+                    android:fontFamily="@font/georgia"
+                    android:textColor="@color/black"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/txt_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_gravity="center"
+                    android:text="@string/student_selected_label"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_12ssp"
+                    android:fontFamily="@font/georgia"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/txt_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:text="Done"
+                android:letterSpacing="0.08"
+                android:textAllCaps="false"
+                android:textColor="#1F75FE"
+                android:fontFamily="@font/georgia_bold"
+                android:backgroundTint="@color/transparent"
+                android:shadowColor="@color/transparent"
+                android:outlineSpotShadowColor="@color/transparent"
+                android:outlineAmbientShadowColor="@color/transparent"
+                android:textSize="@dimen/_10ssp" />
+        </LinearLayout>
+
+        <!-- Search Box and Clear Icon -->
+        <LinearLayout
+            android:id="@+id/ll_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_header">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/search_box"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textColorHint="@color/dark_gray"
+                android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/georgia"
+                android:background="@drawable/search_box_background"
+                android:drawableStart="@drawable/ic_search"
+                android:drawableTint="@color/dark_gray"
+                android:drawablePadding="8dp"
+                android:hint="Search by name"
+                android:imeOptions="actionSearch"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:maxLines="1" />
+
+            <ImageView
+                android:id="@+id/clear_icon"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_margin="4dp"
+                android:contentDescription="Clear search bar"
+                android:padding="4dp"
+                android:src="@drawable/ic_close"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- RecyclerView for Students -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:paddingBottom="@dimen/_64sdp"
+            android:paddingTop="@dimen/_12sdp"
+            android:clipToPadding="false"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:listitem="@layout/list_item_user" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/empty_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Not Found"
+            android:fontFamily="@font/georgia"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/_14ssp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_search" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

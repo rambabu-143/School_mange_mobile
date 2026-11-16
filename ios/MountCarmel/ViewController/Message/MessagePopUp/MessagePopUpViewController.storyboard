@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="TrajanPro-Bold.otf">
+            <string>TrajanPro-Bold</string>
+        </array>
+        <array key="TrajanPro-Regular.ttf">
+            <string>TrajanPro-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Message Pop Up View Controller-->
+        <scene sceneID="C3J-rL-Sop">
+            <objects>
+                <viewController storyboardIdentifier="MessagePopUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3g4-SK-rNr" customClass="MessagePopUpViewController" customModule="MountCarmel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G6B-a2-2Jd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qL-dN-kb6">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="btnBackViewClick:" destination="3g4-SK-rNr" eventType="touchUpInside" id="hFD-9r-KvH"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XWe-eY-Qaa" customClass="RoundedView" customModule="MountCarmel" customModuleProvider="target">
+                                <rect key="frame" x="20" y="409.5" width="374" height="77"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="v5T-Ai-Ktd">
+                                        <rect key="frame" x="15" y="15" width="344" height="47"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2OD-R4-D4w">
+                                                <rect key="frame" x="0.0" y="0.0" width="344" height="47"/>
+                                                <subviews>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Dear Parent, if you have lost old card ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdo-bc-6XL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="344" height="0.0"/>
+                                                        <fontDescription key="fontDescription" name="TrajanPro-Bold" family="Trajan Pro" pointSize="15"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Dear Parent, if you have lost old card, nursery to class" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAb-BB-sRn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="344" height="26"/>
+                                                        <fontDescription key="fontDescription" name="TrajanPro-Regular" family="Trajan Pro" pointSize="13"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Yf2-3j-mWV">
+                                                        <rect key="frame" x="0.0" y="36" width="344" height="11"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="10-10-2020 | 10:45 A.M." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXR-Xm-eNu">
+                                                                <rect key="frame" x="0.0" y="0.0" width="344" height="11"/>
+                                                                <fontDescription key="fontDescription" name="TrajanPro-Regular" family="Trajan Pro" pointSize="11"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="v5T-Ai-Ktd" firstAttribute="top" secondItem="XWe-eY-Qaa" secondAttribute="top" constant="15" id="D1H-xA-Y9s"/>
+                                    <constraint firstAttribute="trailing" secondItem="v5T-Ai-Ktd" secondAttribute="trailing" constant="15" id="GKR-lo-w34"/>
+                                    <constraint firstAttribute="bottom" secondItem="v5T-Ai-Ktd" secondAttribute="bottom" constant="15" id="ZmZ-C5-Rfy"/>
+                                    <constraint firstItem="v5T-Ai-Ktd" firstAttribute="leading" secondItem="XWe-eY-Qaa" secondAttribute="leading" constant="15" id="wPV-Mw-yC1"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3qL-dN-kb6" firstAttribute="leading" secondItem="ymi-n3-cyp" secondAttribute="leading" id="A9f-HM-iXw"/>
+                            <constraint firstItem="ymi-n3-cyp" firstAttribute="trailing" secondItem="3qL-dN-kb6" secondAttribute="trailing" id="GOO-Af-8JI"/>
+                            <constraint firstItem="XWe-eY-Qaa" firstAttribute="leading" secondItem="ymi-n3-cyp" secondAttribute="leading" constant="20" id="I5X-Kv-oBg"/>
+                            <constraint firstItem="ymi-n3-cyp" firstAttribute="bottom" secondItem="3qL-dN-kb6" secondAttribute="bottom" id="O7r-Pi-fhk"/>
+                            <constraint firstItem="XWe-eY-Qaa" firstAttribute="centerX" secondItem="G6B-a2-2Jd" secondAttribute="centerX" id="Tvz-Bh-kx7"/>
+                            <constraint firstItem="3qL-dN-kb6" firstAttribute="top" secondItem="ymi-n3-cyp" secondAttribute="top" id="aZk-sP-ye3"/>
+                            <constraint firstItem="ymi-n3-cyp" firstAttribute="trailing" secondItem="XWe-eY-Qaa" secondAttribute="trailing" constant="20" id="pRU-I8-b3E"/>
+                            <constraint firstItem="XWe-eY-Qaa" firstAttribute="centerY" secondItem="G6B-a2-2Jd" secondAttribute="centerY" id="pkH-3v-JHK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ymi-n3-cyp"/>
+                    </view>
+                    <connections>
+                        <outlet property="lblDate" destination="CXR-Xm-eNu" id="yBD-zI-nDh"/>
+                        <outlet property="lblMessage" destination="lAb-BB-sRn" id="XoG-6y-TjW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ooZ-QD-csZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1708.6956521739132" y="154.6875"/>
+        </scene>
+    </scenes>
+</document>

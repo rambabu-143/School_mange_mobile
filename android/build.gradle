@@ -1,0 +1,60 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '2.1.20'
+    ext.kotlinVersion = "$kotlin_version"
+    // `ksp_version` depends upon kotlin version
+    ext.ksp_version = "$kotlin_version-2.0.1"
+    ext.ndk_version = "27.1.12297006"
+    ext.compileSdkVersion = 35
+    ext.minSdkVersion = 24
+    ext.targetSdkVersion = 35
+    // ext.buildToolsVersion = "36.0.0"
+
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven { url "https://jcenter.bintray.com/" }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.6.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.3.15'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.2'
+        classpath 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:2.0.1'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+
+allprojects {
+    configurations.configureEach {
+        resolutionStrategy {
+            force 'org.xerial:sqlite-jdbc:3.34.0'
+            force 'androidx.core:core-ktx:1.13.1'
+        }
+    }
+
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url "https://jcenter.bintray.com/" }
+    }
+}
+
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty("kotlinOptions")) {
+            project.kotlinOptions {
+                jvmTarget = "17"
+            }
+        }
+    }
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}

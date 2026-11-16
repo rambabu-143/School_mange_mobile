@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="transparent">#00ffffff</color>
+    <color name="white">#ffffff</color>
+    <color name="lightGrey">#9C9B9B</color>
+    <color name="blue">#254ccf</color>
+    <color name="green">#8cc940</color>
+    <color name="orange">#ff9919</color>
+    <color name="black">#000000</color>
+    <color name="border">#acacac</color>
+    <color name="staffBackground">#efefef</color>
+    <color name="background">#F5F5F5</color>
+
+    <color name="greenDark">#abe251</color>
+    <color name="skyBlue">#8cc5d6</color>
+    <color name="yellowDark">#eace30</color>
+    <color name="pinkDark">#d87e80</color>
+    <color name="pink_card">#FFB6C1</color>
+    <color name="pink_card_light">#9FFFB6C1</color>
+    <color name="yellow_card">#FFFF66</color>
+    <color name="yellow_card_light">#A1FFFF66</color>
+    <color name="red_card">#FF0000</color>
+    <color name="red_card_light">#A9FF0000</color>
+    <color name="greenGradiant">#3ebaa7</color>
+    <color name="blue_background">#cac7d8</color>
+    <color name="parent_background">#ffffff</color>
+    <color name="fourth_background">#efefef</color>
+    <color name="purple">#412791</color>
+    <color name="intellent_color">#1b44a0</color>
+    <color name="worthy_color">#c8c8c8</color>
+    <color name="startur_color">#ff952f</color>
+    <color name="emotion_Color">#0c9068</color>
+    <color name="event_color">#8c5fa2</color>
+    <color name="red">#F10621</color>
+
+    <color name="grey_line_color">#DFDDDD</color>
+    <color name="yellow_color">#FFEB3B</color>
+    <color name="yellow_color_">#EFE693</color>
+    <color name="dark_gray">#656363</color>
+    <color name="darker_gray">#343434</color>
+    <color name="blue_container">#3662a4</color>
+
+
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCollectionCell" id="gTV-IL-0wX" customClass="ImageCollectionCell" customModule="MountCarmel" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="162" height="130"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="162" height="130"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxK-ym-NqS">
+                        <rect key="frame" x="5" y="5" width="152" height="120"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gallery-image-1" translatesAutoresizingMaskIntoConstraints="NO" id="fxo-Vv-elw">
+                                <rect key="frame" x="0.0" y="0.0" width="152" height="120"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fxo-Vv-elw" firstAttribute="leading" secondItem="xxK-ym-NqS" secondAttribute="leading" id="Ldf-1l-O64"/>
+                            <constraint firstAttribute="trailing" secondItem="fxo-Vv-elw" secondAttribute="trailing" id="Tkb-eu-C7n"/>
+                            <constraint firstItem="fxo-Vv-elw" firstAttribute="top" secondItem="xxK-ym-NqS" secondAttribute="top" id="uL3-zV-W6D"/>
+                            <constraint firstAttribute="bottom" secondItem="fxo-Vv-elw" secondAttribute="bottom" id="uNG-yF-Gqx"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="xxK-ym-NqS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="4WL-xM-fxD"/>
+                <constraint firstAttribute="trailing" secondItem="xxK-ym-NqS" secondAttribute="trailing" constant="5" id="HnB-p1-cPR"/>
+                <constraint firstItem="xxK-ym-NqS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="R2K-5s-Poa"/>
+                <constraint firstAttribute="bottom" secondItem="xxK-ym-NqS" secondAttribute="bottom" constant="5" id="veH-Gb-reK"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="162" height="130"/>
+            <connections>
+                <outlet property="imgView" destination="fxo-Vv-elw" id="ZLw-gW-7FF"/>
+            </connections>
+            <point key="canvasLocation" x="221.73913043478262" y="133.25892857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="gallery-image-1" width="621" height="585.5"/>
+    </resources>
+</document>

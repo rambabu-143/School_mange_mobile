@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="homeViewModel"
+            type="com.mountcarmelschools.ui.home.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context=".ui.home.HomeFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            android:soundEffectsEnabled="false"
+            app:layout_constraintBottom_toTopOf="@id/cl_bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/_10sdp">
+
+                <LinearLayout
+                    android:id="@+id/ll_actionNeededView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_12sdp"
+                    android:visibility="gone"
+                    android:background="#98FF98"
+                    android:onClick="@{homeViewModel::handleActionNeededViewPress}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tv_welcomeLabel">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="fill"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tt_actionNeededViewTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAllCaps="true"
+                            android:textStyle="italic"
+
+                            android:fontFamily="@font/georgia_bold"
+                            android:maxLines="1"
+                            android:text="Action Needed"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp"
+                        />
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tt_actionNeededViewHeading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:fontFamily="@font/georgia"
+                            android:maxLines="2"
+                            android:text="Heading"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14ssp"
+                        />
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tt_actionNeededViewSubtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:fontFamily="@font/georgia"
+                            android:maxLines="1"
+                            android:text="Subtitle"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp"
+                        />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:src="@drawable/ic_arrow_right"
+                        android:tint="@color/black"
+                        android:layout_gravity="center"
+                    />
+                </LinearLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_welcomeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/trajanpro_bold"
+                    android:text="MOUNT CARMEL"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ll_actionNeededView" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_msgLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:fontFamily="@font/georgia"
+                    android:textAllCaps="false"
+                    android:text="asdasda"
+                    android:textColor="@color/lightGrey"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_welcomeLabel" />
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_msgLabel">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_top_category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:nestedScrollingEnabled="false"
+                        android:overScrollMode="never"
+                        android:scrollbars="none" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/lightGrey"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/relativeLayout" />
+
+
+                <LinearLayout
+                    android:id="@+id/attendanceLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_140sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_attendance"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_weight="0.8"
+                        android:background="@drawable/light_pink_background"
+                        android:onClick="@{homeViewModel::onAttendance}"
+                        app:layout_constraintBottom_toBottomOf="@id/cl_calendar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/view">
+
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/iv_attendance"
+                            android:layout_width="@dimen/_90sdp"
+                            android:layout_height="@dimen/_90sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            android:scaleType="fitCenter"
+                            android:src="@mipmap/ic_3rd_attandance"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_attendance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/georgia"
+                            android:gravity="center"
+                            android:maxLines="2"
+
+                            android:text="@string/attendance"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iv_attendance" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_calendar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/green_background"
+                        android:onClick="@{homeViewModel::onSchoolCalendar}"
+                        app:layout_constraintBottom_toBottomOf="@id/cl_attendance"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/view">
+
+
+                        <ImageView
+                            android:id="@+id/iv_school_calendar"
+                            android:layout_width="@dimen/_90sdp"
+                            android:layout_height="@dimen/_90sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            android:padding="@dimen/_10sdp"
+                            android:src="@mipmap/ic_3rd_school_calendar"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_calendar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/iv_school_calendar"
+                            android:fontFamily="@font/georgia"
+                            android:gravity="center"
+                            android:maxLines="2"
+                            android:text="@string/school_calendar"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iv_school_calendar" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/wiseLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_140sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/attendanceLayout">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_time_table"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/yellow_background"
+                        android:gravity="center"
+                        android:onClick="@{homeViewModel::onTimeTable}"
+                        android:paddingBottom="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/attendanceLayout">
+
+
+                        <ImageView
+                            android:id="@+id/iv_time_table"
+                            android:layout_width="@dimen/_90sdp"
+                            android:layout_height="@dimen/_90sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            android:scaleType="fitCenter"
+                            android:padding="@dimen/_12sdp"
+                            android:src="@drawable/discipline_student"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_timeTable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:fontFamily="@font/georgia"
+                            android:gravity="center"
+                            android:text="@string/disciplinary"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iv_time_table" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_wise"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_weight="0.8"
+                        android:background="@drawable/blue_background"
+                        android:onClick="@{homeViewModel::onWISE}"
+                        android:paddingBottom="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/cl_time_table"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/cl_time_table">
+
+
+                        <ImageView
+                            android:id="@+id/iv_wise"
+                            android:layout_width="@dimen/_90sdp"
+                            android:layout_height="@dimen/_90sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            android:scaleType="fitCenter"
+                            android:src="@mipmap/ic_3rd_wise"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_wise"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/iv_wise"
+                            android:fontFamily="@font/georgia"
+                            android:gravity="center"
+                            android:textAllCaps="true"
+                            android:text="@string/wise"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iv_wise" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/homeworkLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_140sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/wiseLayout">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_assign_homework"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/white_background"
+                        android:onClick="@{homeViewModel::onAssignHomework}">
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/iv_assign_homework"
+                            android:layout_width="@dimen/_90sdp"
+                            android:layout_height="@dimen/_90sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_12th_holiday_homework"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_assign_homework"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/georgia"
+                            android:gravity="center"
+                            android:maxLines="2"
+                            android:text="@string/assign_homework_label"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iv_assign_homework" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_homework"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/light_pink_background"
+                        android:onClick="@{homeViewModel::onHomework}">
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/iv_homework"
+                            android:layout_width="@dimen/_90sdp"
+                            android:layout_height="@dimen/_90sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_3rd_holiday_homework"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_homework"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/georgia"
+                            android:gravity="center"
+                            android:maxLines="2"
+                            android:text="@string/homework_label"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iv_homework" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            android:background="@drawable/bottom_2"
+            android:foregroundGravity="bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.mountcarmelschools.utlis.HexagonMaskView
+                android:id="@+id/hexagonMaskView"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:onClick="@{homeViewModel::onProfile}"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toTopOf="@+id/profileTxt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/profileTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/profile"
+                android:textSize="@dimen/_8sdp"
+                android:fontFamily="@font/georgia"
+
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/hexagonMaskView"
+                app:layout_constraintStart_toStartOf="@+id/hexagonMaskView" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/hexagonMaskView"
+                app:layout_constraintStart_toStartOf="parent">
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="@{homeViewModel::onTeacher}"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <ImageView
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:scaleType="fitCenter"
+                        android:id="@+id/iv_assessment"
+                        android:src="@drawable/ic_teachers" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_assessment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/georgia"
+                        android:lines="1"
+                        android:text="@string/my_teachers"
+                        android:textSize="@dimen/_9ssp"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/hexagonMaskView">
+
+
+                <LinearLayout
+                    android:id="@+id/linearLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="@{homeViewModel::onLogout}"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <ImageView
+                        android:id="@+id/iv_fee"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_bottom_logout" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_fee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/georgia"
+                        android:lines="1"
+                        android:text="@string/logout"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            android:background="@drawable/bottom_2"
+            android:foregroundGravity="bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <mountcarmelschool.com.carmel.mountschool.com.carmel.mountschool.utlis.HexagonMaskView
+                android:id="@+id/hexagonMaskView"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:onClick="@{homeViewModel::onProfile}"
+                android:src="@drawable/ic_bottom_profile"
+                app:layout_constraintBottom_toTopOf="@+id/profileTxt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/profileTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/profile"
+                android:textSize="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/hexagonMaskView"
+                app:layout_constraintStart_toStartOf="@+id/hexagonMaskView" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/hexagonMaskView"
+                app:layout_constraintStart_toStartOf="parent">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="@{homeViewModel::onSetting}"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <ImageView
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_bottom_settings" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/georgia"
+                        android:text="@string/settings"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="@{homeViewModel::onAssessmentRecord}"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <ImageView
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:scaleType="fitCenter"
+                        android:id="@+id/iv_assessment"
+                        android:src="@drawable/ic_bottom_assessment" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/georgia"
+                        android:lines="1"
+                        android:id="@+id/tv_assessment"
+                        android:ellipsize="end"
+                        android:text="@string/assessment_record"
+                        android:textSize="@dimen/_9ssp"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/hexagonMaskView">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="@{homeViewModel::onMessage}"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <ImageView
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_bottom_message" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/georgia"
+                        android:text="@string/message"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="@{homeViewModel::onLogout}"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <ImageView
+                        android:id="@+id/iv_fee"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_bottom_logout" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_fee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/georgia"
+                        android:lines="1"
+                        android:text="@string/logout"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+-->
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

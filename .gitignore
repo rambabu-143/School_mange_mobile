@@ -1,0 +1,155 @@
+.credentials
+
+# Android
+
+*.iml
+.gradle
+local.properties
+.idea/libraries
+.idea/modules.xml
+.idea/workspace.xml
+.DS_Store
+build
+captures
+.externalNativeBuild
+.idea
+keystore.jks
+private_key.pepk
+.cxx
+
+
+
+# iOS
+
+# Xcode
+#
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Xcode Project
+#
+build/
+DerivedData/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+**/*.xcworkspace/xcshareddata/*.xccheckout
+*.moved-aside
+*.xcuserstate
+**/*.xcodeproj/xcuserdata/
+**/*.xcworkspace/xcuserdata/
+**/.swiftpm/xcode/xcuserdata/
+**/*.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+**/*.playground/**/timeline.xctimeline
+.idea/
+
+# Xcode 8 and earlier
+# *.xcscmblueprint
+
+# Xcode 9 and later
+*.xcscmblueprint
+**/*.xcworkspace/xcshareddata/*.xcscmblueprint
+
+# CocoaPods
+#
+Pods/
+# Specific folders to ignore
+# podspec.lock
+# build/
+
+# Carthage
+#
+Carthage/Build/
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo.
+# Instead, use fastlane to re-generate the screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/
+
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+fastlane/sign&cert
+
+# Code Injection by AppCode
+#
+.idea/
+*.hmap
+
+# Add by yourself
+# Pods/
+# Carthage/
+# fastlane/
+
+# AppCenter
+#
+appcenter
+node_modules/
+
+# Build
+**/.build/
+**/Build/
+DerivedData/
+*.ipa
+
+# CSV
+*.orig
+.svn
+
+# Other
+*~
+*.swp
+*.save
+._*
+*.bak
+*.p8
+
+*.local
+
+# Local tooling artifacts
+.serena/
+graphify-out/
+# secrets / local config (never commit)
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+*.p12
+*.pem
+*.mobileprovision
+google-services.json
+GoogleService-Info.plist
+ios/.xcode.env.local

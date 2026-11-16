@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Child List View Controller-->
+        <scene sceneID="h6P-NJ-GjS">
+            <objects>
+                <viewController storyboardIdentifier="ChildListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BGt-yC-ALm" customClass="ChildListViewController" customModule="MountCarmel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AVG-0u-mJb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfm-Zx-H0e" customClass="NavigationBarView" customModule="MountCarmel" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="z2R-f4-b1t"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V8O-Hb-mVv">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BGt-yC-ALm" id="w8E-If-lWI"/>
+                                    <outlet property="delegate" destination="BGt-yC-ALm" id="gGx-zA-keu"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dB9-iI-rrd" firstAttribute="bottom" secondItem="V8O-Hb-mVv" secondAttribute="bottom" id="1vX-Kg-xgf"/>
+                            <constraint firstItem="V8O-Hb-mVv" firstAttribute="leading" secondItem="dB9-iI-rrd" secondAttribute="leading" id="Fi3-qe-85y"/>
+                            <constraint firstItem="V8O-Hb-mVv" firstAttribute="top" secondItem="gfm-Zx-H0e" secondAttribute="bottom" id="Hrm-6l-NZ3"/>
+                            <constraint firstAttribute="trailing" secondItem="gfm-Zx-H0e" secondAttribute="trailing" id="Lmn-vn-Sxf"/>
+                            <constraint firstItem="gfm-Zx-H0e" firstAttribute="top" secondItem="dB9-iI-rrd" secondAttribute="top" id="MRw-lO-kF4"/>
+                            <constraint firstItem="dB9-iI-rrd" firstAttribute="trailing" secondItem="V8O-Hb-mVv" secondAttribute="trailing" id="gZR-sK-WPE"/>
+                            <constraint firstItem="gfm-Zx-H0e" firstAttribute="leading" secondItem="AVG-0u-mJb" secondAttribute="leading" id="upd-Xv-sJ4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dB9-iI-rrd"/>
+                    </view>
+                    <connections>
+                        <outlet property="navigationView" destination="gfm-Zx-H0e" id="NFa-hc-duf"/>
+                        <outlet property="tblChildList" destination="V8O-Hb-mVv" id="c45-2c-NHW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9rh-MF-mhC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119" y="143"/>
+        </scene>
+    </scenes>
+</document>
