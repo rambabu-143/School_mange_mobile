@@ -11,9 +11,9 @@ const STAFF_ONLY = new Set([
 const STUDENT_PARENT_ONLY = new Set([
   'my-attendance', 'calendar', 'homework', 'holiday-homework', 'assignments', 'assignment-list',
   'syllabus', 'assessment', 'self-awareness', 'stream-selection', 'id-card', 'my-teacher',
-  'parent-details', 'sibling', 'health',
+  'parent-details', 'sibling', 'health', 'wise-cards',
 ]);
-const PARENT_ONLY = new Set(['pay-bill', 'transport-renewal', 'transport', 'child-list']);
+const PARENT_ONLY = new Set(['transport-renewal', 'transport', 'child-list']);
 
 export default function AppLayout() {
   const session = useSessionStore((s) => s.session);
@@ -22,7 +22,9 @@ export default function AppLayout() {
   const denied =
     (!session?.isStaff && STAFF_ONLY.has(route)) ||
     (session?.isStaff && (STUDENT_PARENT_ONLY.has(route) || PARENT_ONLY.has(route))) ||
-    (!session?.isParent && PARENT_ONLY.has(route));
+    (!session?.isParent && PARENT_ONLY.has(route)) ||
+    // Fee: parents pay the school bill, staff see their transport bill; students have neither.
+    (route === 'pay-bill' && !session?.isStaff && !session?.isParent);
   if (denied) return <Redirect href="/" />;
 
   return (
@@ -69,6 +71,7 @@ export default function AppLayout() {
       <Stack.Screen name="chronicles" options={{ title: 'Chronicles' }} />
       <Stack.Screen name="privacy-policy" options={{ title: 'Privacy Policy' }} />
       <Stack.Screen name="wise" options={{ title: 'Feedback' }} />
+      <Stack.Screen name="wise-cards" options={{ title: 'WISE' }} />
     </Stack>
   );
 }

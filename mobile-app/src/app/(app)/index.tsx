@@ -94,8 +94,8 @@ function gridFor(isStaff: boolean, isParent: boolean): Tile[][] {
       ];
   const row2: Tile[] = [
     { label: 'Disciplinary', route: '/disciplinary', icon: ICONS.disciplinary },
-    // Student/parent feedback needs a teacher picked first (staffId param) — My Teachers is the entry point.
-    { label: 'WISE', route: isStaff ? '/wise' : '/my-teacher', icon: ICONS.wise },
+    // Student/parent WISE = cards received; teacher feedback survey stays reachable via My Teachers.
+    { label: 'WISE', route: isStaff ? '/wise' : '/wise-cards', icon: ICONS.wise },
   ];
   const row3: Tile[] = [
     // Native: cl_assign_homework is View.GONE for everyone except staff.

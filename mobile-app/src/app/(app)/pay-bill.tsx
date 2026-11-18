@@ -2,6 +2,7 @@ import * as React from 'react';
 import { ActivityIndicator, Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+import { StaffTransportBill } from '@/components/staff-transport-bill';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Card } from '@/design-system/card';
@@ -45,7 +46,12 @@ function InstallmentRow({
   return (
     <Card touchable disabled={disabled} activeOpacity={0.55} onPress={onPress} style={styles.row}>
       <View style={styles.rowHeader}>
-        <Image source={icon} style={styles.checkbox} />
+        {icon === CHECKBOX_ICONS.inactive ? (
+          // the inactive PNG is near-white and vanishes on the light card — draw a visible empty box instead
+          <View style={styles.checkboxEmpty} />
+        ) : (
+          <Image source={icon} style={styles.checkbox} />
+        )}
         <Text style={styles.installmentLabel}>{data.inst_no}</Text>
       </View>
       <View style={styles.rowAmounts}>
@@ -73,6 +79,11 @@ function InstallmentRow({
 }
 
 export default function PayBillScreen() {
+  const isStaff = useSessionStore((s) => s.session?.isStaff);
+  return isStaff ? <StaffTransportBill /> : <ParentPayBill />;
+}
+
+function ParentPayBill() {
   const session = useSessionStore((s) => s.session);
   const [selected, setSelected] = React.useState<Record<string, boolean>>({});
   const [paying, setPaying] = React.useState(false);
@@ -128,7 +139,7 @@ export default function PayBillScreen() {
       return;
     }
 
-    const paymentUrl = `https://mountcarmelschool.com/parent/payment/fee-bill-app/${session.userId}`;
+    const paymentUrl = `https://www.mountcarmelschool.com/parent/payment/fee-bill-app/${session.userId}`;
 
     try {
       setPaying(true);
@@ -217,6 +228,7 @@ const styles = StyleSheet.create({
   row: { gap: 12 },
   rowHeader: { flexDirection: 'row', gap: 12, alignItems: 'center' },
   checkbox: { width: 24, height: 24, resizeMode: 'contain' },
+  checkboxEmpty: { width: 22, height: 22, margin: 1, borderRadius: 4, borderWidth: 2, borderColor: '#2658A5' },
   installmentLabel: { fontSize: 16, fontWeight: '600', textTransform: 'capitalize', flex: 1 },
   rowAmounts: { flexDirection: 'row', gap: 12, justifyContent: 'flex-end' },
   amountLabels: { alignItems: 'flex-end', gap: 2 },
