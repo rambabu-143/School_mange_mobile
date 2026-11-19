@@ -4,7 +4,7 @@ Standalone rewrite. Native iOS/Android apps stay live until this reaches parity;
 
 ## Backend contract (as it actually is today)
 
-- **Base URL**: hardcoded in `di/networking/RetrofitClient.kt` — `https://mountcarmelschool.com:4201/` (comment says `/*Test URL*/`, swapped by hand for prod builds — there's no build-flavor/env-config mechanism). Bring proper env config (`app.config.ts` + EAS build profiles) into the Expo app instead of repeating this hack.
+- **Base URL**: native hardcodes it in `di/networking/RetrofitClient.kt` — `https://mountcarmelschool.com:4201/` (hand-swapped for prod builds). The Expo app reads `EXPO_PUBLIC_API_URL` (see `.env.example`), then `expo.extra.apiUrl`, then falls back to `https://mountcarmelschool.com:4201` (`src/lib/api-client.ts`). Still open: per-profile values in `eas.json` so preview/production builds can't silently use the wrong server.
 - **One API surface**: contrary to the community names in the graph report (`StaffManagementAPI`, `WiseManagementAPI`, etc. — those are just response-model *package* names, not separate network interfaces), there is a single `ApiService.kt` with ~90 endpoints, mixed `Call<T>` (old, callback) and `suspend fun ... Response<T>` (new, coroutine) styles.
 - **Auth**: no auto-injecting interceptor. Every call takes `@Header("Authorization") authorization: String?` manually, populated as `"Bearer " + token`. Token lives in `SharedPreferences("MyPreferences")` key `auth_token`, alongside `userId`, `standardId`, `standardSectionId`, `studentId`, `usertype`, `isParent`, `isStaff`, `staff_userId`, `current_branch`, `year_session`, `is_logged_in`, `screen_lock_enabled`.
 - **Response envelope**: consistent `{status, message, data...}` per-endpoint (no generic wrapper type — each response is its own Moshi class), snake_case field names.
@@ -16,7 +16,7 @@ The old brownfield RN code (now in `legacy-brownfield-reference/`) independently
 The old brownfield screens never needed a login flow: the *native* shell always handled auth and handed RN a ready token via launch params. A standalone app has no native shell to do that anymore, so these are blocking, not optional:
 
 - [x] **API client**: `src/lib/api-client.ts` — base URL + bearer header + envelope unwrap (`status`→throw on false, return `data`) + typed error. Replaces the copy-pasted fetch-per-query pattern in the legacy reference code. Also has `getEnvelope`/`postEnvelopeRaw` for the endpoints that need sibling fields (e.g. `path`) or non-standard status handling (regular-leave's confirmation dialog).
-- [x] **Auth**: `src/api/auth.ts` + `src/app/sign-in.tsx` — staff/student email+password and parent mobile→OTP, both against the real `user/*` endpoints. Dev-only bypass accounts in `src/lib/dev-accounts.ts` (delete once real test creds exist).
+- [x] **Auth**: `src/api/auth.ts` + `src/app/sign-in.tsx` — staff/student **Google sign-in** (`user/googlelogin`, `src/lib/google-signin.ts`) and parent mobile→OTP (`user/generate-otp`, `user/parent-login`). Email/password login and the dev-bypass accounts were removed. Real Google sign-in on a debug build needs the debug SHA-1 registered in Firebase.
 - [x] **Session storage**: `src/lib/session-store.ts` — Zustand + `expo-secure-store`, mirrors `SharedPreferenceUtils` (token, staffId, isStaff/isParent).
 - [x] **Role-aware navigation shell**: `src/app/_layout.tsx` (`Stack.Protected` gate) → `(app)/_layout.tsx` (`Stack` wrapping `(tabs)`) → `(app)/(tabs)/_layout.tsx` (native tabs). Not yet role-differentiated (student/parent/staff all see the same tabs) — extend when P2 screens need it.
 - [x] **Push notifications**: device token registration on dashboard load (`src/lib/use-push-token-registration.ts`).
@@ -80,6 +80,23 @@ The old brownfield screens never needed a login flow: the *native* shell always 
   `src/components/lock-screen.tsx` + an `AppState` listener in root `_layout.tsx` re-prompt on every
   background→foreground transition (mirrors `FaceIDViewController`'s `viewDidAppear` re-prompt), with
   a logout escape hatch if biometrics fail.
+
+## Feedback round 1 (Shivani's staff + parent/student docs) — status
+
+Branch `fix/feedback-round-1` (local + GitHub clean copy; **not on GitLab**). All items fixed in code; UI verified on an Android emulator against a fake backend (not real data). Highlights: term attendance route (`/false` 4th segment, fallback), Chronicles/Newsletter top-level fields, photo `path`, messages popup, absence popup YES/NO, drawer/profile header and photo, fee checkbox, WISE 80-char limit and parent WISE cards, homework/assigned-homework date bounds, ID card DOB format, staff disciplinary card colours, Transport Renewal payload matched to native (`sibling_id`, `standard_section_id`), Pay Now outcome toast.
+
+**Not verifiable without real accounts/backend:** Pay Now end to end (does the portal page need login?), real response shapes for term attendance / Chronicles / Newsletter, student login, push delivery, real Google sign-in.
+
+## Remaining before release
+
+- [ ] Per-profile `EXPO_PUBLIC_API_URL` in `eas.json` (development / preview / production).
+- [ ] Register debug + release SHA-1/SHA-256 in Firebase; confirm iOS `GoogleService-Info.plist` matches `com.app.MountCarmel`.
+- [ ] Test with one real staff, parent and student account on a device.
+- [ ] Push `fix/feedback-round-1` to GitLab and open the MR.
+- [ ] Rotate keys if the tracked `.env` / Firebase files in git history are real; keep them out of future commits.
+- [ ] EAS preview build → internal testing → production build and store submission.
+- [ ] Retire the native Android/iOS apps once the Expo build is live and verified.
+- [ ] Decide whether to add a test framework (none today).
 
 ## Open questions before building the backlog out further
 
