@@ -141,6 +141,8 @@ function ParentPayBill() {
 
     const paymentUrl = `https://www.mountcarmelschool.com/parent/payment/fee-bill-app/${session.userId}`;
 
+    const dueOf = (list: Installment[]) => list.reduce((sum, i) => sum + (i.amount_payble ?? 0), 0);
+    const dueBefore = dueOf(installments);
     try {
       setPaying(true);
       await WebBrowser.openAuthSessionAsync(paymentUrl);
@@ -157,7 +159,13 @@ function ParentPayBill() {
       setPaying(false);
       // Invalidate and refetch bill data to refresh paid status upon returning
       await queryClient.invalidateQueries({ queryKey: ['fee-bill'] });
-      await feeBillQuery.refetch();
+      // The checkout opens in the system browser, so (unlike native's WebView) we can't see its redirect:
+      // judge the outcome by whether the amount due actually dropped.
+      const after = (await feeBillQuery.refetch()).data;
+      if (after) {
+        const paid = dueOf(after) < dueBefore;
+        Toast.show({ type: paid ? 'success' : 'info', text1: paid ? 'Your payment successful' : 'Payment not completed', position: 'top', topOffset: 100 });
+      }
     }
   };
 
