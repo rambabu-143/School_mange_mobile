@@ -16,7 +16,7 @@ export type HalfDayLeaveTypeMenuProps = {
   disabled?: boolean;
 };
 
-const _HalfDayLeaveTypeMenu: React.FC<HalfDayLeaveTypeMenuProps> = ({
+const HalfDayLeaveTypeMenuImpl: React.FC<HalfDayLeaveTypeMenuProps> = ({
   onSelect,
   onDisabledPress,
   selectedOption,
@@ -73,4 +73,4 @@ const styles = StyleSheet.create({
   triggerButton: { flexDirection: 'row', gap: 8, alignItems: 'center', justifyContent: 'center' },
 });
 
-export const HalfDayLeaveTypeMenu = React.memo(_HalfDayLeaveTypeMenu);
+export const HalfDayLeaveTypeMenu = React.memo(HalfDayLeaveTypeMenuImpl);

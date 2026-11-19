@@ -8,6 +8,7 @@ export const useAttendanceEventsData = (
 
   React.useEffect(() => {
     if (events) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- sync server data into editable local state
       setAttendanceEvents((prev) => ({ ...prev, ...events }));
     }
   }, [events]);

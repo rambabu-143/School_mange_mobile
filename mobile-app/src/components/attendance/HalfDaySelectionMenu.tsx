@@ -16,7 +16,7 @@ export type HalfDaySelectionMenuProps = {
   disabled?: boolean;
 };
 
-const _HalfDaySelectionMenu: React.FC<HalfDaySelectionMenuProps> = ({
+const HalfDaySelectionMenuImpl: React.FC<HalfDaySelectionMenuProps> = ({
   onSelect,
   onDisabledPress,
   selectedOption,
@@ -77,4 +77,4 @@ const styles = StyleSheet.create({
   triggerButton: { flexDirection: 'row', gap: 8, alignItems: 'center', justifyContent: 'center' },
 });
 
-export const HalfDaySelectionMenu = React.memo(_HalfDaySelectionMenu);
+export const HalfDaySelectionMenu = React.memo(HalfDaySelectionMenuImpl);

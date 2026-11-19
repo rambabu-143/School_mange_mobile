@@ -97,6 +97,7 @@ export const useNewLeaveSubmitAction = (closeModal: () => void) => {
             { text: 'Cancel', style: 'cancel' },
             {
               text: `Yes, Proceed${noOfHolidays > 0 ? ` (Including ${noOfHolidays} holiday${noOfHolidays > 1 ? 's' : ''})` : ''}`,
+              // eslint-disable-next-line react-hooks/immutability -- only runs after submitRegularLeave is assigned
               onPress: () => submitRegularLeave({ isConfirmation: true, noOfHolidays }),
               style: 'destructive',
             },

@@ -15,7 +15,7 @@ dayjs.extend(minMax);
 
 export type NewEventModalContentProps = { closeModal: () => void };
 
-const _NewEventModalContent: React.FC<NewEventModalContentProps> = ({ closeModal }) => {
+const NewEventModalContentImpl: React.FC<NewEventModalContentProps> = ({ closeModal }) => {
   return (
     <View style={{ flex: 1, ...(Platform.OS === 'android' ? styles.backdrop : {}) }}>
       <View style={{ flex: 1, ...(Platform.OS === 'android' ? styles.content : {}) }}>
@@ -71,4 +71,4 @@ const styles = StyleSheet.create({
   scrollContainer: { gap: 24, paddingHorizontal: 12, paddingTop: 16 + HEADER_OFFSET, paddingBottom: 48 },
 });
 
-export const NewEventModalContent = React.memo(_NewEventModalContent);
+export const NewEventModalContent = React.memo(NewEventModalContentImpl);

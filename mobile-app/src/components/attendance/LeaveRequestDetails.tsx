@@ -11,7 +11,7 @@ export type LeaveRequestDetailsProps = {
   };
 };
 
-const _LeaveRequestDetails: React.FC<LeaveRequestDetailsProps> = ({ data }) => {
+const LeaveRequestDetailsImpl: React.FC<LeaveRequestDetailsProps> = ({ data }) => {
   return (
     <React.Fragment>
       <Text style={styles.text}>
@@ -36,4 +36,4 @@ const styles = StyleSheet.create({
   label: { fontSize: 15, lineHeight: 15 * 1.5, fontWeight: '500', color: '#767676' },
 });
 
-export const LeaveRequestDetails = React.memo(_LeaveRequestDetails);
+export const LeaveRequestDetails = React.memo(LeaveRequestDetailsImpl);

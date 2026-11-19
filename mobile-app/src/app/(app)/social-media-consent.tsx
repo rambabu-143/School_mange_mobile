@@ -124,7 +124,7 @@ export default function SocialMediaConsentScreen() {
             style={styles.checkboxImage}
           />
           <ThemedText style={styles.describe}>
-            I agree to follow and support the "OffLine till Nine" policy at home.
+            I agree to follow and support the &quot;OffLine till Nine&quot; policy at home.
           </ThemedText>
         </TouchableOpacity>
 

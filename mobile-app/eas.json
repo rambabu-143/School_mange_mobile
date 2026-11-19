@@ -16,6 +16,12 @@
     }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "ios": {
+        "appleId": "info@mountcarmelschool.com",
+        "ascAppId": "1628601880",
+        "appleTeamId": "S42KK28898"
+      }
+    }
   }
 }

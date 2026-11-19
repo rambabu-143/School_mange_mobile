@@ -9,7 +9,7 @@ import { HalfDayLeaveTypeMenu } from '@/components/attendance/HalfDayLeaveTypeMe
 import { LeaveDayTypeMenu } from '@/components/attendance/LeaveDayTypeMenu';
 import { useNewStaffApplicationStore } from '@/stores/new-staff-application-store';
 
-const _NewCOLeave: React.FC = () => {
+const NewCOLeaveImpl: React.FC = () => {
   const coLeaveDate = useNewStaffApplicationStore((state) => state.coLeaveDate);
   const setCoLeaveDate = useNewStaffApplicationStore.getState().setCoLeaveDate;
 
@@ -118,4 +118,4 @@ const styles = StyleSheet.create({
   errorText: { fontSize: 14, lineHeight: 14 * 1.5, color: 'tomato', fontWeight: '500', marginLeft: 4 },
 });
 
-export const NewCOLeave = React.memo(_NewCOLeave);
+export const NewCOLeave = React.memo(NewCOLeaveImpl);

@@ -4,7 +4,7 @@ import type { TimelineProps } from 'react-native-calendars';
 
 export type DayTimelineProps = Pick<TimelineProps, 'events' | 'date'>;
 
-const _DayTimeline: React.FC<DayTimelineProps> = ({ events, date }) => {
+const DayTimelineImpl: React.FC<DayTimelineProps> = ({ events, date }) => {
   return (
     <Timeline
       date={date}
@@ -22,4 +22,4 @@ const _DayTimeline: React.FC<DayTimelineProps> = ({ events, date }) => {
   );
 };
 
-export const DayTimeline = React.memo(_DayTimeline);
+export const DayTimeline = React.memo(DayTimelineImpl);

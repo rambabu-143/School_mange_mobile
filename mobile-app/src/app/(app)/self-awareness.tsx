@@ -52,6 +52,7 @@ export default function SelfAwarenessScreen() {
 
   React.useEffect(() => {
     if (!query.data) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- sync server data into editable local state
     setGoal(query.data.myGoal ?? '');
     setStrength(query.data.myStrength ?? '');
     setHobbies(query.data.myInterestHobbies ?? '');

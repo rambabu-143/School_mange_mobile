@@ -7,7 +7,7 @@ export type MessageItem = {
   _id?: string | null;
   sms_text?: string | null;
   created_at?: string | null;
-  mobiles?: Array<{ read_flag?: boolean | null }> | null;
+  mobiles?: { read_flag?: boolean | null }[] | null;
 };
 
 /** Native: GET sms/staff/SMS/{id} (staff) or GET sms/student/SMS/{id} (student/parent) */

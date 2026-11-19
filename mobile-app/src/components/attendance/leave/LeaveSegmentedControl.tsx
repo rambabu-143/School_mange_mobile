@@ -7,7 +7,7 @@ import SegmentedControl, {
 import { leaveTypes } from './constants';
 import { useNewStaffApplicationStore } from '@/stores/new-staff-application-store';
 
-const _LeaveSegmentedControl: React.FC = () => {
+const LeaveSegmentedControlImpl: React.FC = () => {
   const selectedLeaveType = useNewStaffApplicationStore((state) => state.selectedLeaveType);
   const setSelectedLeaveType = useNewStaffApplicationStore.getState().setSelectedLeaveType;
 
@@ -36,4 +36,4 @@ const styles = StyleSheet.create({
   container: { marginHorizontal: 12, marginVertical: 8 },
 });
 
-export const LeaveSegmentedControl = React.memo(_LeaveSegmentedControl);
+export const LeaveSegmentedControl = React.memo(LeaveSegmentedControlImpl);

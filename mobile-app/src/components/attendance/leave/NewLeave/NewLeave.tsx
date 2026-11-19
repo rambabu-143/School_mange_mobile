@@ -14,7 +14,7 @@ import type { StaffLeaveDetails } from '@/queries/useStaffLeaveBalancesQuery';
 import { useValidateFields } from '../hooks/useValidateFields';
 import { CommonFields } from '../CommonFields';
 
-const _NewLeave: React.FC = () => {
+const NewLeaveImpl: React.FC = () => {
   const selectedLeaveCategory = useNewStaffApplicationStore((state) => state.selectedLeaveCategory);
   const setSelectedLeaveCategory = useNewStaffApplicationStore.getState().setSelectedLeaveCategory;
   const leaveTypeError = useNewStaffApplicationStore((state) => state.leaveTypeError);
@@ -35,16 +35,6 @@ const _NewLeave: React.FC = () => {
   const setSingleHalfDayLeaveDetails = useNewStaffApplicationStore.getState().setSingleHalfDayLeaveDetails;
 
   const { validateRegularLeaveFields } = useValidateFields();
-
-  const handleLeaveTypeSelect = React.useCallback((option: StaffLeaveDetails) => {
-    setSelectedLeaveCategory(option);
-    setLeaveTypeError('');
-    if (option.is_half_day_applicable === 'No') {
-      setNumberOfHalfDays(0);
-      setSingleHalfDayLeaveDetails({ leaveOn: from, leaveIn: null });
-      computeToDate(null, 0);
-    }
-  }, []);
 
   const computeToDate = (fromDate?: Date | null, halfDays?: number | null) => {
     const numOfDaysInt = parseInt(numberOfDaysStr.trim());
@@ -74,6 +64,16 @@ const _NewLeave: React.FC = () => {
       setSingleHalfDayLeaveDetails({ leaveIn: null, leaveOn: fromDateFinal });
     }
   };
+
+  const handleLeaveTypeSelect = React.useCallback((option: StaffLeaveDetails) => {
+    setSelectedLeaveCategory(option);
+    setLeaveTypeError('');
+    if (option.is_half_day_applicable === 'No') {
+      setNumberOfHalfDays(0);
+      setSingleHalfDayLeaveDetails({ leaveOn: from, leaveIn: null });
+      computeToDate(null, 0);
+    }
+  }, []);
 
   const onNumberOfDaysBlur = () => {
     validateRegularLeaveFields();
@@ -356,4 +356,4 @@ const styles = StyleSheet.create({
   cardItemDivider: { height: StyleSheet.hairlineWidth, marginLeft: 16, backgroundColor: '#343434' },
 });
 
-export const NewLeave = React.memo(_NewLeave);
+export const NewLeave = React.memo(NewLeaveImpl);

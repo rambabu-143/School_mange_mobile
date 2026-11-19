@@ -32,6 +32,6 @@ export const useStaffLeaveBalancesQuery = (year: string) => {
     enabled: !!token && !!staffId,
     queryKey: ['staff', 'leaves'],
     queryFn: () =>
-      orEmpty(apiClient.get<Array<StaffLeaveDetails>>(`hr/staff/leaves/all/${staffId}/${year}`, token), []),
+      orEmpty(apiClient.get<StaffLeaveDetails[]>(`hr/staff/leaves/all/${staffId}/${year}`, token), []),
   });
 };

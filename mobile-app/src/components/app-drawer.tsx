@@ -22,6 +22,7 @@ export function AppDrawer({
   const [mounted, setMounted] = React.useState(visible);
 
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- sync server data into editable local state
     if (visible) setMounted(true);
   }, [visible]);
 

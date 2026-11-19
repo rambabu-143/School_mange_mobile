@@ -31,7 +31,7 @@ export type LeaveRequestCardProps = {
   onDeletePress?: (leaveRequest: StaffLeaveRequest) => void;
 };
 
-const _LeaveRequestCard: React.FC<LeaveRequestCardProps> = ({ style, data, onDeletePress }) => {
+const LeaveRequestCardImpl: React.FC<LeaveRequestCardProps> = ({ style, data, onDeletePress }) => {
   const [expanded, setExpanded] = React.useState(false);
   const [assessorsViewExpanded, setAssessorsViewExpanded] = React.useState(false);
   const expandedValue = useAnimatedValue(0);
@@ -216,4 +216,4 @@ const styles = StyleSheet.create({
   divider: { flex: 1, height: StyleSheet.hairlineWidth, backgroundColor: '#343434' },
 });
 
-export const LeaveRequestCard = React.memo(_LeaveRequestCard);
+export const LeaveRequestCard = React.memo(LeaveRequestCardImpl);

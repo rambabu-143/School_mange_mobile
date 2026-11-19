@@ -8,7 +8,7 @@ import { CommonFields } from '../CommonFields';
 import { useNewStaffApplicationStore } from '@/stores/new-staff-application-store';
 import { useValidateFields } from '../hooks/useValidateFields';
 
-const _NewODLeave: React.FC = () => {
+const NewODLeaveImpl: React.FC = () => {
   const numberOfDaysStr = useNewStaffApplicationStore((state) => state.numberOfDaysStr);
   const setNumberOfDaysStr = useNewStaffApplicationStore.getState().setNumberOfDaysStr;
   const to = useNewStaffApplicationStore((state) => state.to);
@@ -127,4 +127,4 @@ const styles = StyleSheet.create({
   disabledTextInput: { opacity: 0.5 },
 });
 
-export const NewODLeave = React.memo(_NewODLeave);
+export const NewODLeave = React.memo(NewODLeaveImpl);

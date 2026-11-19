@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 
 import { StaffLeaveDetails, useStaffLeaveBalancesQuery } from '@/queries/useStaffLeaveBalancesQuery';
 
-const _LeaveBalancesTable: React.FC = () => {
+const LeaveBalancesTableImpl: React.FC = () => {
   const staffLeaveBalancesQuery = useStaffLeaveBalancesQuery(dayjs().format('YYYY'));
 
   const staffLeaveBalancesData = React.useMemo(
@@ -86,16 +86,16 @@ const styles = StyleSheet.create({
   noDataLabel: { fontSize: 16, lineHeight: 16 * 1.5, fontWeight: '400', color: '#343434' },
 });
 
-export const LeaveBalancesTable = React.memo(_LeaveBalancesTable);
+export const LeaveBalancesTable = React.memo(LeaveBalancesTableImpl);
 
-type TableFormatData = Array<{
+type TableFormatData = {
   id: string;
   label: string;
   data: (string | number)[];
   style: ViewStyle;
-}>;
+}[];
 
-function getTableFormatLeaveData(data?: Array<StaffLeaveDetails> | null): TableFormatData | null | undefined {
+function getTableFormatLeaveData(data?: StaffLeaveDetails[] | null): TableFormatData | null | undefined {
   if (!data) return data;
 
   const particulars: TableFormatData[number] = { id: 'particulars', label: 'Particulars', data: [], style: { flex: 2 } };

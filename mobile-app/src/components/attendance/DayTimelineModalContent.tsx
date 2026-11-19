@@ -10,7 +10,7 @@ export type DayTimelineModalContentProps = Pick<TimelineProps, 'events'> & {
   closeModal: () => void;
 };
 
-const _DayTimelineModalContent: React.FC<DayTimelineModalContentProps> = ({
+const DayTimelineModalContentImpl: React.FC<DayTimelineModalContentProps> = ({
   events,
   date,
   closeModal,
@@ -82,4 +82,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export const DayTimelineModalContent = React.memo(_DayTimelineModalContent);
+export const DayTimelineModalContent = React.memo(DayTimelineModalContentImpl);

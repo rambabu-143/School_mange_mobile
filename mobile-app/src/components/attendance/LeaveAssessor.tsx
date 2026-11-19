@@ -8,7 +8,7 @@ export type LeaveAssessorProps = {
   label?: React.ReactNode;
 };
 
-const _LeaveAssessor: React.FC<LeaveAssessorProps> = ({ data, label }) => {
+const LeaveAssessorImpl: React.FC<LeaveAssessorProps> = ({ data, label }) => {
   const statusStyle = getStatusStyles(data.status);
 
   return (
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   text: { fontSize: 16, lineHeight: 16 * 1.5, fontWeight: '400', color: '#323232' },
 });
 
-export const LeaveAssessor = React.memo(_LeaveAssessor);
+export const LeaveAssessor = React.memo(LeaveAssessorImpl);
 
 function getStatusStyles(status: string | null | undefined): (ViewStyle & TextStyle) | null {
   status = status?.toLowerCase?.();

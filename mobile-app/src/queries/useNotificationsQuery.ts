@@ -7,7 +7,7 @@ export type NotificationItem = {
   _id?: string | null;
   sms_text?: string | null;
   created_at?: string | null;
-  notifications?: Array<{ read_flag?: boolean | null }> | null;
+  notifications?: { read_flag?: boolean | null }[] | null;
 };
 
 /** Native: GET sms/staff/APP/{id} (staff) or GET sms/student/APP/{id} (student/parent) */

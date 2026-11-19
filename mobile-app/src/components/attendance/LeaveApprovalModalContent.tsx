@@ -24,7 +24,7 @@ dayjs.extend(duration);
 
 export type LeaveApprovalModalContentProps = { closeModal: () => void };
 
-const _LeaveApprovalModalContent: React.FC<LeaveApprovalModalContentProps> = ({ closeModal }) => {
+const LeaveApprovalModalContentImpl: React.FC<LeaveApprovalModalContentProps> = ({ closeModal }) => {
   const [selectedYear, setSelectedYear] = React.useState(dayjs().format('YYYY'));
 
   const staffLeaveApprovalsQuery = useStaffLeaveApprovalsQuery(selectedYear);
@@ -145,4 +145,4 @@ const styles = StyleSheet.create({
   fullScreenLoader: { flex: 1, minHeight: 400, alignItems: 'center', justifyContent: 'center' },
 });
 
-export const LeaveApprovalModalContent = React.memo(_LeaveApprovalModalContent);
+export const LeaveApprovalModalContent = React.memo(LeaveApprovalModalContentImpl);

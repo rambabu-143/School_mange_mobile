@@ -5,7 +5,7 @@ import { useNewLeaveCancelAction } from './hooks/useNewLeaveCancelAction';
 
 export type HeaderProps = { closeModal: () => void };
 
-const _Header: React.FC<HeaderProps> = ({ closeModal }) => {
+const HeaderImpl: React.FC<HeaderProps> = ({ closeModal }) => {
   const { submit, isLoading } = useNewLeaveSubmitAction(closeModal);
   const { cancel } = useNewLeaveCancelAction(closeModal);
 
@@ -27,7 +27,7 @@ const _Header: React.FC<HeaderProps> = ({ closeModal }) => {
   );
 };
 
-export const Header = React.memo(_Header);
+export const Header = React.memo(HeaderImpl);
 
 const headerStyles = StyleSheet.create({
   header: { flexDirection: 'row', height: 44, alignItems: 'center' },

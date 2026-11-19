@@ -10,7 +10,7 @@ import { CommonFields } from '../CommonFields';
 
 dayjs.extend(minMax);
 
-const _NewShortLeave: React.FC = () => {
+const NewShortLeaveImpl: React.FC = () => {
   const shortLeaveDate = useNewStaffApplicationStore((state) => state.shortLeaveDate);
   const setShortLeaveDate = useNewStaffApplicationStore.getState().setShortLeaveDate;
 
@@ -115,4 +115,4 @@ const styles = StyleSheet.create({
   cardItemDivider: { height: StyleSheet.hairlineWidth, marginLeft: 16, backgroundColor: '#343434' },
 });
 
-export const NewShortLeave = React.memo(_NewShortLeave);
+export const NewShortLeave = React.memo(NewShortLeaveImpl);

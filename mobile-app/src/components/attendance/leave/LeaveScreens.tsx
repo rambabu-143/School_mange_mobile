@@ -6,7 +6,7 @@ import { NewCOLeave } from './NewCOLeave/NewCOLeave';
 import { NewODLeave } from './NewODLeave/NewODLeave';
 import { useNewStaffApplicationStore } from '@/stores/new-staff-application-store';
 
-const _LeaveScreens: React.FC = () => {
+const LeaveScreensImpl: React.FC = () => {
   const selectedLeaveType = useNewStaffApplicationStore((state) => state.selectedLeaveType);
 
   if (selectedLeaveType.id === 'regular-leave') return <NewLeave />;
@@ -17,4 +17,4 @@ const _LeaveScreens: React.FC = () => {
   return null;
 };
 
-export const LeaveScreens = React.memo(_LeaveScreens);
+export const LeaveScreens = React.memo(LeaveScreensImpl);

@@ -31,7 +31,7 @@ export const useMyAttendanceQuery = ({
     queryKey: ['staff', 'details', 'attendance', startDate, endDate],
     queryFn: () =>
       orEmpty(
-        apiClient.get<Array<DateAttendance>>(`hr/staff-attendance/my-attendance/${startDate}/${endDate}`, token),
+        apiClient.get<DateAttendance[]>(`hr/staff-attendance/my-attendance/${startDate}/${endDate}`, token),
         []
       ),
     refetchOnMount: false,

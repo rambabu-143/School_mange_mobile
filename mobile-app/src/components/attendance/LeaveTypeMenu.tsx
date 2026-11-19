@@ -20,7 +20,7 @@ export type LeaveTypeMenuProps = {
   selectedOption?: StaffLeaveDetails | null;
 };
 
-const _LeaveTypeMenu: React.FC<LeaveTypeMenuProps> = ({ onSelect, selectedOption }) => {
+const LeaveTypeMenuImpl: React.FC<LeaveTypeMenuProps> = ({ onSelect, selectedOption }) => {
   const staffLeaveBalancesQuery = useStaffLeaveBalancesQuery(dayjs().format('YYYY'));
 
   return (
@@ -116,4 +116,4 @@ const styles = StyleSheet.create({
   triggerButton: { flexDirection: 'row', gap: 8, alignItems: 'center', justifyContent: 'center' },
 });
 
-export const LeaveTypeMenu = React.memo(_LeaveTypeMenu);
+export const LeaveTypeMenu = React.memo(LeaveTypeMenuImpl);

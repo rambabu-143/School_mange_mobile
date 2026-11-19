@@ -55,7 +55,7 @@ export type StaffLeaveRequest = {
     leave_name?: string | null;
     leave_code?: string | null;
   } | null;
-  assessor?: Array<LeaveAssessor> | null;
+  assessor?: LeaveAssessor[] | null;
 };
 
 export const useStaffLeaveRequestsQuery = (
@@ -69,7 +69,7 @@ export const useStaffLeaveRequestsQuery = (
     queryKey: ['leave-requests', leaveCategory, year],
     queryFn: () =>
       orEmpty(
-        apiClient.getEnvelope<Array<StaffLeaveRequest>>(`leave/application/status/${staffId}/${leaveCategory}/${year}`, token),
+        apiClient.getEnvelope<StaffLeaveRequest[]>(`leave/application/status/${staffId}/${leaveCategory}/${year}`, token),
         { data: [] }
       ),
   });

@@ -24,7 +24,7 @@ export type StaffSeniorMenuProps = {
   noOptionLabel?: string;
 };
 
-const _StaffSeniorMenu: React.FC<StaffSeniorMenuProps> = ({
+const StaffSeniorMenuImpl: React.FC<StaffSeniorMenuProps> = ({
   onSelect,
   noPriorApprovalSelected,
   onNoPriorApprovalSelect,
@@ -90,4 +90,4 @@ const styles = StyleSheet.create({
   triggerButton: { flexDirection: 'row', gap: 8, alignItems: 'center', justifyContent: 'center' },
 });
 
-export const StaffSeniorMenu = React.memo(_StaffSeniorMenu);
+export const StaffSeniorMenu = React.memo(StaffSeniorMenuImpl);

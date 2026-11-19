@@ -7,7 +7,7 @@ export type LeaveFromToDateTimeViewProps = {
   data: Omit<StaffLeaveRequest, 'staff_id'>;
 };
 
-const _LeaveFromToDateTimeView: React.FC<LeaveFromToDateTimeViewProps> = ({ data }) => {
+const LeaveFromToDateTimeViewImpl: React.FC<LeaveFromToDateTimeViewProps> = ({ data }) => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
@@ -79,4 +79,4 @@ const styles = StyleSheet.create({
   textAlignVertical: { textAlignVertical: 'center' },
 });
 
-export const LeaveFromToDateTimeView = React.memo(_LeaveFromToDateTimeView);
+export const LeaveFromToDateTimeView = React.memo(LeaveFromToDateTimeViewImpl);

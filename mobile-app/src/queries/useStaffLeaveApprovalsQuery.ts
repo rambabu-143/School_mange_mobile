@@ -67,7 +67,7 @@ export type StaffLeaveApproval = {
     leave_name?: string | null;
     leave_code?: string | null;
   } | null;
-  assessor?: Array<LeaveAssessor> | null;
+  assessor?: LeaveAssessor[] | null;
 };
 
 export const useStaffLeaveApprovalsQuery = (year: string) => {
@@ -76,6 +76,6 @@ export const useStaffLeaveApprovalsQuery = (year: string) => {
   return useQuery({
     enabled: !!token,
     queryKey: ['leave-approvals', year],
-    queryFn: () => orEmpty(apiClient.getEnvelope<Array<StaffLeaveApproval>>(`leave/application/forms/${year}`, token), { data: [] }),
+    queryFn: () => orEmpty(apiClient.getEnvelope<StaffLeaveApproval[]>(`leave/application/forms/${year}`, token), { data: [] }),
   });
 };

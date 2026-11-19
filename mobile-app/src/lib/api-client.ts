@@ -44,9 +44,6 @@ async function fetchEnvelopeRaw<T>(path: string, options: RequestOptions = {}): 
 
   const url = `${BASE_URL}/${path.replace(/^\//, '')}`;
 
-  // ponytail: temporary request/response logging to debug a real-credentials login rejection — remove once resolved.
-  if (__DEV__) console.log('[api]', method, url, body ?? '');
-
   const response = await fetch(url, {
     method,
     headers: {
@@ -62,7 +59,6 @@ async function fetchEnvelopeRaw<T>(path: string, options: RequestOptions = {}): 
   }
 
   const result = (await response.json()) as Envelope<T> | null;
-  if (__DEV__) console.log('[api] response', url, result);
   if (typeof result !== 'object' || result === null) {
     throw new ApiError('Invalid response format');
   }

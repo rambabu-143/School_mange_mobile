@@ -19,7 +19,7 @@ export type YearSelectMenuProps = {
   selectedOption?: string | null;
 };
 
-const _YearSelectMenu: React.FC<YearSelectMenuProps> = ({ onSelect, selectedOption }) => {
+const YearSelectMenuImpl: React.FC<YearSelectMenuProps> = ({ onSelect, selectedOption }) => {
   const token = useSessionStore((s) => s.session?.token);
   const attendanceDatesQuery = useAttendanceDateQuery({ token });
 
@@ -85,4 +85,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export const YearSelectMenu = React.memo(_YearSelectMenu);
+export const YearSelectMenu = React.memo(YearSelectMenuImpl);

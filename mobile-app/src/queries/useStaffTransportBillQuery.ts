@@ -15,7 +15,6 @@ type StaffBillData = {
     installment?: ApiInstallment[] | null;
     filepath?: string | null;
     payable?: number | null;
-    full_payment_received?: boolean | null;
   } | null;
 };
 
@@ -45,7 +44,7 @@ export const useStaffTransportBillQuery = () => {
         instNo: current.inst_no,
         amount: current.amount ?? 0,
         due: current.amount_payble ?? 0,
-        paid: bill.full_payment_received === true && (bill.payable ?? 0) <= 0,
+        paid: (current.amount_payble ?? 0) <= 0, // native: Pay shown only while amount_payble > 0
         filepath: bill.filepath,
       };
     },

@@ -19,7 +19,7 @@ export type SeniorRole = {
 
 export type GetStaffSeniorData = {
   _id: string;
-  roles: Array<SeniorRole>;
+  roles: SeniorRole[];
 };
 
 export const useGetStaffSeniorsQuery = (year: string) => {

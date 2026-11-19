@@ -5,7 +5,7 @@ import { StaffSeniorMenu } from '@/components/attendance/StaffSeniorMenu';
 import { useNewStaffApplicationStore } from '@/stores/new-staff-application-store';
 import { SeniorRole } from '@/queries/useGetStaffSeniorsQuery';
 
-export const _CommonFields: React.FC = () => {
+export const CommonFieldsImpl: React.FC = () => {
   const leaveReasonText = useNewStaffApplicationStore((state) => state.leaveReasonText);
   const setLeaveReasonText = useNewStaffApplicationStore.getState().setLeaveReasonText;
 
@@ -150,4 +150,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export const CommonFields = React.memo(_CommonFields);
+export const CommonFields = React.memo(CommonFieldsImpl);

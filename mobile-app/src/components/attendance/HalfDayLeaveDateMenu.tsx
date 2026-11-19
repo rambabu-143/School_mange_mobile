@@ -15,10 +15,10 @@ export type HalfDayLeaveDateMenuProps = {
   onDisabledPress?: () => void;
   selectedOption?: Date | null;
   disabled?: boolean;
-  dates: Array<Date>;
+  dates: Date[];
 };
 
-const _HalfDayLeaveDateMenu: React.FC<HalfDayLeaveDateMenuProps> = ({
+const HalfDayLeaveDateMenuImpl: React.FC<HalfDayLeaveDateMenuProps> = ({
   onSelect,
   onDisabledPress,
   selectedOption,
@@ -80,4 +80,4 @@ const styles = StyleSheet.create({
   triggerButton: { flexDirection: 'row', gap: 8, alignItems: 'center', justifyContent: 'center' },
 });
 
-export const HalfDayLeaveDateMenu = React.memo(_HalfDayLeaveDateMenu);
+export const HalfDayLeaveDateMenu = React.memo(HalfDayLeaveDateMenuImpl);

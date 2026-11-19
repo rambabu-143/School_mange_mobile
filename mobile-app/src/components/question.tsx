@@ -8,7 +8,7 @@ export type QuestionProps = {
   AnswerComponent: React.ReactElement | null;
 };
 
-function _Question({ question, AnswerComponent }: QuestionProps) {
+function QuestionImpl({ question, AnswerComponent }: QuestionProps) {
   return (
     <View>
       <Text style={styles.questionText}>
@@ -23,4 +23,4 @@ const styles = StyleSheet.create({
   questionText: { fontSize: 18, lineHeight: 18 * 1.5, color: '#343434' },
 });
 
-export const Question = React.memo(_Question);
+export const Question = React.memo(QuestionImpl);

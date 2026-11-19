@@ -8,7 +8,7 @@ export type LeaveRequestDetailsTriggerProps = {
   onPress?: () => void;
 };
 
-const _LeaveRequestDetailsTrigger: React.FC<LeaveRequestDetailsTriggerProps> = ({
+const LeaveRequestDetailsTriggerImpl: React.FC<LeaveRequestDetailsTriggerProps> = ({
   expandedValue,
   onPress,
   triggerText,
@@ -52,4 +52,4 @@ const styles = StyleSheet.create({
   expandedStateIcon: { width: 20, height: 20, resizeMode: 'contain', tintColor: '#99999a' },
 });
 
-export const LeaveRequestDetailsTrigger = React.memo(_LeaveRequestDetailsTrigger);
+export const LeaveRequestDetailsTrigger = React.memo(LeaveRequestDetailsTriggerImpl);

@@ -14,7 +14,7 @@ export type CalendarListWrapperProps = {
   onDayPress: (date: string, events: Event[]) => void;
 };
 
-const _CalendarListWrapper = ({ onDayPress }: CalendarListWrapperProps) => {
+const CalendarListWrapperImpl = ({ onDayPress }: CalendarListWrapperProps) => {
   const token = useSessionStore((s) => s.session?.token);
   const { height: windowHeight } = useWindowDimensions();
   const { top: topSafeInset } = useSafeAreaInsets();
@@ -129,4 +129,4 @@ const styles = StyleSheet.create({
   calendarStyle: { paddingLeft: 0, paddingRight: 0 },
 });
 
-export const CalendarListWrapper = React.memo(_CalendarListWrapper);
+export const CalendarListWrapper = React.memo(CalendarListWrapperImpl);

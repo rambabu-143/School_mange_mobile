@@ -27,7 +27,7 @@ export type LeaveRequestApprovalCardProps = {
   onLeaveActionPress?: (action: 'positive' | 'negative', leaveRequest: StaffLeaveApproval) => void;
 };
 
-const _LeaveRequestApprovalCard: React.FC<LeaveRequestApprovalCardProps> = ({
+const LeaveRequestApprovalCardImpl: React.FC<LeaveRequestApprovalCardProps> = ({
   style,
   data,
   imagePathPrefix,
@@ -175,4 +175,4 @@ const styles = StyleSheet.create({
   triggerContainer: { flex: 1, paddingVertical: 4, flexDirection: 'row', alignItems: 'flex-end', gap: 32 },
 });
 
-export const LeaveRequestApprovalCard = React.memo(_LeaveRequestApprovalCard);
+export const LeaveRequestApprovalCard = React.memo(LeaveRequestApprovalCardImpl);

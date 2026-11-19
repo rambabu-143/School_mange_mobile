@@ -13,7 +13,7 @@ export type QuestionRatingInputProps = {
   disabled?: boolean;
 };
 
-function _QuestionRatingInput({ disabled, question, value, onAnswer }: QuestionRatingInputProps) {
+function QuestionRatingInputImpl({ disabled, question, value, onAnswer }: QuestionRatingInputProps) {
   return (
     <View style={styles.row}>
       {RATING_VALUES.map((val) => {
@@ -39,4 +39,4 @@ const styles = StyleSheet.create({
   star: { width: 28, height: 28 },
 });
 
-export const QuestionRatingInput = React.memo(_QuestionRatingInput);
+export const QuestionRatingInput = React.memo(QuestionRatingInputImpl);

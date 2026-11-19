@@ -32,7 +32,7 @@ const leaveTypes = [
   { id: 'od', label: 'OD' },
 ];
 
-const _LeaveRequestsModalContent: React.FC<LeaveRequestsModalContentProps> = ({ closeModal }) => {
+const LeaveRequestsModalContentImpl: React.FC<LeaveRequestsModalContentProps> = ({ closeModal }) => {
   const [selectedLeaveType, setSelectedLeaveType] = React.useState(() =>
     leaveTypes.find((leaveType) => leaveType.id === 'regular-leave')
   );
@@ -147,4 +147,4 @@ const styles = StyleSheet.create({
   fullScreenLoader: { flex: 1, minHeight: 400, alignItems: 'center', justifyContent: 'center' },
 });
 
-export const LeaveRequestsModalContent = React.memo(_LeaveRequestsModalContent);
+export const LeaveRequestsModalContent = React.memo(LeaveRequestsModalContentImpl);
